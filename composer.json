@@ -1,0 +1,70 @@
+{
+	"name": "narsil/auth",
+	"description": "Narsil Auth",
+	"license": "MIT",
+	"keywords": [
+		"laravel",
+		"narsil",
+		"auth"
+	],
+	"authors": [
+		{
+			"name": "Jonathan Rigaux"
+		}
+	],
+	"repositories": [
+		{
+			"type": "vcs",
+			"url": "git@github.com:Narsileon/narsil-forms.git",
+			"no-api": true
+		},
+		{
+			"type": "vcs",
+			"url": "git@github.com:Narsileon/narsil-localization.git",
+			"no-api": true
+		},
+		{
+			"type": "vcs",
+			"url": "git@github.com:Narsileon/narsil-policies.git",
+			"no-api": true
+		},
+		{
+			"type": "vcs",
+			"url": "git@github.com:Narsileon/narsil-ui.git",
+			"no-api": true
+		}
+	],
+	"require": {
+		"php": "^8.2",
+		"inertiajs/inertia-laravel": "^1.0",
+		"laravel/fortify": "^1.21",
+		"laravel/framework": "^11.3",
+		"mobiledetect/mobiledetectlib": "^4.8",
+		"narsil/forms": "dev-main",
+		"narsil/localization": "dev-main",
+		"narsil/policies": "dev-main",
+		"narsil/ui": "dev-main"
+	},
+	"require-dev": {
+		"phpunit/phpunit": "^11.0"
+	},
+	"minimum-stability": "dev",
+	"prefer-stable": true,
+	"autoload": {
+		"psr-4": {
+			"Narsil\\Auth\\": "src/"
+		}
+	},
+	"extra": {
+		"laravel": {
+			"providers": [
+				"Narsil\\Auth\\NarsilAuthServiceProvider"
+			]
+		}
+	},
+	"config": {
+		"optimize-autoloader": true,
+		"preferred-install": "dist",
+		"sort-packages": true
+	}
+}
