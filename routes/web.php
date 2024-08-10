@@ -13,7 +13,7 @@ Route::middleware([
     'web'
 ])->group(function ()
 {
-    Route::delete('sessions/{session}/destroy', SessionController::class)
+    Route::delete('sessions/{session}/destroy', [SessionController::class, "destroy"])
         ->name('sessions.destroy');
     Route::get('sessions/destroy-all', SessionDeleteAllController::class)
         ->name('sessions.destroy-all');
