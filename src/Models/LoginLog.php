@@ -34,6 +34,10 @@ class LoginLog extends Model
             self::IP_ADDRESSES => 'array',
         ];
 
+        $this->guarded = [
+            self::ID,
+        ];
+
         parent::__construct($attributes, self::TABLE);
     }
 

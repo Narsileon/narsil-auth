@@ -47,6 +47,10 @@ class User extends Authenticatable implements
             self::PASSWORD => "hashed",
         ];
 
+        $this->guarded = [
+            self::ID,
+        ];
+
         $this->hidden = [
             self::EMAIL_VERIFIED_AT,
             self::PASSWORD,

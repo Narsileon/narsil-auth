@@ -39,6 +39,10 @@ class Session extends Model
             self::ID => "string",
         ];
 
+        $this->guarded = [
+            self::ID,
+        ];
+
         parent::__construct($attributes);
     }
 
