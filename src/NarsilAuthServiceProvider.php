@@ -147,13 +147,13 @@ final class NarsilAuthServiceProvider extends ServiceProvider
      */
     private function bootViews(): void
     {
-        Fortify::confirmPasswordView(ConfirmPasswordController::class);
-        Fortify::loginView(LoginController::class);
-        Fortify::registerView(RegisterController::class);
-        Fortify::requestPasswordResetLinkView(ForgotPasswordController::class);
-        Fortify::resetPasswordView(ResetPasswordController::class);
-        Fortify::twoFactorChallengeView(TwoFactorController::class);
-        Fortify::verifyEmailView(VerifyEmailController::class);
+        Fortify::confirmPasswordView((new ConfirmPasswordController()));
+        Fortify::loginView((new LoginController()));
+        Fortify::registerView((new RegisterController()));
+        Fortify::requestPasswordResetLinkView((new ForgotPasswordController()));
+        Fortify::resetPasswordView((new ResetPasswordController()));
+        Fortify::twoFactorChallengeView((new TwoFactorController()));
+        Fortify::verifyEmailView((new VerifyEmailController()));
     }
 
     /**
