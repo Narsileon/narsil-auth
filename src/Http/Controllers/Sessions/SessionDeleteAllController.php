@@ -25,7 +25,7 @@ class SessionDeleteAllController
      *
      * @return RedirectResponse
      */
-    public function destroy(Request $request): RedirectResponse
+    public function __invoke(Request $request): RedirectResponse
     {
         $sessions = Auth::user()->{User::RELATIONSHIP_SESSIONS};
 

@@ -24,7 +24,7 @@ class SessionController
      *
      * @return RedirectResponse
      */
-    public function __invoke(Request $request, Session $session): RedirectResponse
+    public function destroy(Request $request, Session $session): RedirectResponse
     {
         $session->delete();
 
