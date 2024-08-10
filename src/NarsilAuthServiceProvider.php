@@ -5,26 +5,24 @@ namespace Narsil\Auth;
 #region USE
 
 use Illuminate\Cache\RateLimiting\Limit;
-use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\ServiceProvider;
-use Inertia\Inertia;
-use Inertia\Response;
 use Laravel\Fortify\Contracts\LoginResponse;
 use Laravel\Fortify\Contracts\LogoutResponse;
 use Laravel\Fortify\Fortify;
 use Narsil\Auth\Actions\CreateNewUser;
 use Narsil\Auth\Actions\ResetUserPassword;
-use Narsil\Auth\Http\Forms\ConfirmPasswordForm;
-use Narsil\Auth\Http\Forms\ForgotPasswordForm;
-use Narsil\Auth\Http\Forms\LoginForm;
-use Narsil\Auth\Http\Forms\RegisterForm;
-use Narsil\Auth\Http\Forms\ResetPasswordForm;
-use Narsil\Auth\Http\Forms\TwoFactorForm;
+use Narsil\Auth\Http\Controllers\ConfirmPasswordController;
+use Narsil\Auth\Http\Controllers\ForgotPasswordController;
+use Narsil\Auth\Http\Controllers\LoginController;
+use Narsil\Auth\Http\Controllers\RegisterController;
+use Narsil\Auth\Http\Controllers\ResetPasswordController;
+use Narsil\Auth\Http\Controllers\TwoFactorController;
+use Narsil\Auth\Http\Controllers\VerifyEmailController;
 use Narsil\Auth\Models\LoginLog;
 use Narsil\Auth\Models\User;
 use Narsil\Auth\Services\DeviceService;
@@ -39,7 +37,7 @@ use Narsil\Localization\Services\LocalizationService;
  */
 final class NarsilAuthServiceProvider extends ServiceProvider
 {
-    #region SERVICE PROVIDER
+    #region PUBLIC METHODS
 
     /**
      * @return void
@@ -62,96 +60,6 @@ final class NarsilAuthServiceProvider extends ServiceProvider
         $this->bootTranslations();
         $this->bootUserActions();
         $this->bootViews();
-    }
-
-    #endregion
-
-    #region PUBLIC METHODS
-
-    /**
-     * @return Response
-     */
-    public function renderConfirmPassword(): Response
-    {
-        $form = (new ConfirmPasswordForm())->get();
-
-        return Inertia::render('narsil/auth::ConfirmPassword/Index', compact(
-            'form',
-        ));
-    }
-
-    /**
-     * @return Response
-     */
-    public function renderForgotPassword(): Response
-    {
-        $form = (new ForgotPasswordForm())->get();
-        $status = session('status');
-
-        return Inertia::render('narsil/auth::ForgotPassword/Index', compact(
-            'form',
-            'status',
-        ));
-    }
-
-    /**
-     * @return Response
-     */
-    public function renderLogin(): Response
-    {
-        $form = (new LoginForm())->get();
-        $status = session('status');
-
-        return Inertia::render('narsil/auth::Login/Index', compact(
-            'form',
-            'status',
-        ));
-    }
-
-    /**
-     * @return RedirectResponse|Response
-     */
-    public function renderRegister(): RedirectResponse|Response
-    {
-        $form = (new RegisterForm())->get();
-
-        return Inertia::render('narsil/auth::Register/Index', compact(
-            'form',
-        ));
-    }
-
-    /**
-     * @return Response
-     */
-    public function renderResetPassword(): Response
-    {
-        $form = (new ResetPasswordForm())->get();
-        $token = request()->route('token');
-
-        return Inertia::render('narsil/auth::ResetPassword/Index', compact(
-            'form',
-            'token',
-        ));
-    }
-
-    /**
-     * @return Response
-     */
-    public function renderTwoFactorChallenge(): Response
-    {
-        $form = (new TwoFactorForm())->get();
-
-        return Inertia::render('narsil/auth::TwoFactorChallenge/Index', compact(
-            'form',
-        ));
-    }
-
-    /**
-     * @return Response
-     */
-    public function renderVerifyEmail(): Response
-    {
-        return Inertia::render('narsil/auth::VerifyEmail/Index');
     }
 
     #endregion
@@ -239,13 +147,13 @@ final class NarsilAuthServiceProvider extends ServiceProvider
      */
     private function bootViews(): void
     {
-        Fortify::confirmPasswordView([$this, 'renderConfirmPassword']);
-        Fortify::loginView([$this, 'renderLogin']);
-        Fortify::registerView([$this, 'renderRegister']);
-        Fortify::requestPasswordResetLinkView([$this, 'renderForgotPassword']);
-        Fortify::resetPasswordView([$this, 'renderResetPassword']);
-        Fortify::twoFactorChallengeView([$this, 'renderTwoFactorChallenge']);
-        Fortify::verifyEmailView([$this, 'renderVerifyEmail']);
+        Fortify::confirmPasswordView(ConfirmPasswordController::class);
+        Fortify::loginView(LoginController::class);
+        Fortify::registerView(RegisterController::class);
+        Fortify::requestPasswordResetLinkView(ForgotPasswordController::class);
+        Fortify::resetPasswordView(ResetPasswordController::class);
+        Fortify::twoFactorChallengeView(TwoFactorController::class);
+        Fortify::verifyEmailView(VerifyEmailController::class);
     }
 
     /**
