@@ -1,0 +1,3 @@
+interface ChangePasswordFormProps {
+	form: FormType;
+}

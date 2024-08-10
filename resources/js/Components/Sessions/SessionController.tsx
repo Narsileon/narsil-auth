@@ -1,7 +1,6 @@
 import { Link } from "@inertiajs/react";
-import { Monitor, Smartphone } from "lucide-react";
+import { Monitor, Smartphone, Tablet } from "lucide-react";
 import { useTranslationsStore } from "@narsil-ui/Stores/translationStore";
-import * as React from "react";
 
 import {
 	Button,
@@ -36,18 +35,17 @@ const SessionController = ({ sessions }: SessionControllerProps) => {
 						return (
 							<TableRow key={index}>
 								<TableCell>
-									<div className='flex items-center gap-x-2'>
-										{session.isDesktop ? (
-											<Monitor className='h-5 w-5' />
-										) : (
-											<Smartphone className='h-5 w-5' />
-										)}
-										<span>{`${session.platform} - ${session.browser}`}</span>
-									</div>
+									{session.device === "mobile" ? (
+										<Smartphone className='h-5 w-5' />
+									) : session.device === "tablet" ? (
+										<Tablet className='h-5 w-5' />
+									) : (
+										<Monitor className='h-5 w-5' />
+									)}
 								</TableCell>
 								<TableCell>{session.ip_address}</TableCell>
-								<TableCell className={`${session.isCurrentDevice ? "text-primary" : ""}`}>
-									{session.isCurrentDevice ? trans("common.current_device") : session.last_activity}
+								<TableCell className={`${session.is_current_device ? "text-primary" : ""}`}>
+									{session.is_current_device ? trans("common.current_device") : session.last_activity}
 								</TableCell>
 								<TableCell>
 									<Button

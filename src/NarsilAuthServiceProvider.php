@@ -7,6 +7,7 @@ namespace Narsil\Auth;
 use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\Facades\Session;
@@ -25,7 +26,9 @@ use Narsil\Auth\Http\Controllers\TwoFactorController;
 use Narsil\Auth\Http\Controllers\VerifyEmailController;
 use Narsil\Auth\Models\LoginLog;
 use Narsil\Auth\Models\User;
+use Narsil\Auth\Policies\LoginLogPolicy;
 use Narsil\Auth\Services\DeviceService;
+use Narsil\Framework\Policies\UserPolicy;
 use Narsil\Localization\Services\LocalizationService;
 
 #endregion
@@ -55,6 +58,7 @@ final class NarsilAuthServiceProvider extends ServiceProvider
     {
         $this->bootAuthUsing();
         $this->bootMigrations();
+        $this->bootPolicies();
         $this->bootPublishes();
         $this->bootRateLimiters();
         $this->bootTranslations();
@@ -95,6 +99,15 @@ final class NarsilAuthServiceProvider extends ServiceProvider
         $this->loadMigrationsFrom([
             __DIR__ . '/../database/migrations',
         ]);
+    }
+
+    /**
+     * @return void
+     */
+    private function bootPolicies(): void
+    {
+        Gate::policy(LoginLog::class, LoginLogPolicy::class);
+        Gate::policy(User::class, UserPolicy::class);
     }
 
     /**

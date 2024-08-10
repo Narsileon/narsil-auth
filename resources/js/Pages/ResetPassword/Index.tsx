@@ -12,7 +12,7 @@ import {
 } from "@narsil-ui/Components";
 
 interface Props {
-	form: FormType & { nodes: FormNodeType[] };
+	form: FormType;
 	token: string;
 }
 

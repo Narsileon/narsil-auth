@@ -3,7 +3,7 @@ import { Form, FormProvider, FormRenderer, useForm } from "@narsil-forms/Compone
 import { useTranslationsStore } from "@narsil-ui/Stores/translationStore";
 
 interface Props {
-	form: FormType & { nodes: FormNodeType[] };
+	form: FormType;
 }
 
 const Index = ({ form }: Props) => {
