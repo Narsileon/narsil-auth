@@ -106,7 +106,7 @@ class Session extends Model
         return Attribute::make(
             get: function ()
             {
-                DeviceService::getDevice($this->{Session::USER_AGENT});
+                return DeviceService::getDevice($this->{Session::USER_AGENT});
             }
         );
     }
@@ -119,7 +119,7 @@ class Session extends Model
         return Attribute::make(
             get: function ()
             {
-                $this->{Session::ID} === request()->session()->getId();
+                return $this->{Session::ID} === request()->session()->getId();
             }
         );
     }
