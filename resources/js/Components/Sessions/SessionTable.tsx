@@ -2,23 +2,13 @@ import { Link } from "@inertiajs/react";
 import { Monitor, Smartphone, Tablet } from "lucide-react";
 import { useTranslationsStore } from "@narsil-ui/Stores/translationStore";
 
-import {
-	Button,
-	cn,
-	Table,
-	TableBody,
-	TableCell,
-	TableFooter,
-	TableHead,
-	TableHeader,
-	TableRow,
-} from "@narsil-ui/Components";
+import { Button, cn, Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@narsil-ui/Components";
 
 const SessionTable = ({ sessions }: SessionTableProps) => {
 	const { trans } = useTranslationsStore();
 
 	return (
-		<Table>
+		<Table className='w-full'>
 			<TableHeader>
 				<TableHead>{trans("Device")}</TableHead>
 				<TableHead>{trans("validation.attributes.IP")}</TableHead>
@@ -63,30 +53,6 @@ const SessionTable = ({ sessions }: SessionTableProps) => {
 					);
 				})}
 			</TableBody>
-			<TableFooter>
-				<Button
-					asChild={true}
-					variant='default'
-				>
-					<Link
-						href={route("sessions.destroy-other")}
-						method='get'
-					>
-						{trans("Sign out from other sessions")}
-					</Link>
-				</Button>
-				<Button
-					asChild={true}
-					variant='secondary'
-				>
-					<Link
-						href={route("sessions.destroy-all")}
-						method='get'
-					>
-						{trans("Sign out from all sessions")}
-					</Link>
-				</Button>
-			</TableFooter>
 		</Table>
 	);
 };
