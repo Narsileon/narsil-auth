@@ -61,6 +61,7 @@ final class NarsilAuthServiceProvider extends ServiceProvider
         $this->bootPolicies();
         $this->bootPublishes();
         $this->bootRateLimiters();
+        $this->bootRoutes();
         $this->bootTranslations();
         $this->bootUserActions();
         $this->bootViews();
@@ -136,6 +137,14 @@ final class NarsilAuthServiceProvider extends ServiceProvider
         {
             return Limit::perMinute(5)->by($request->session()->get('login.id'));
         });
+    }
+
+    /**
+     * @return void
+     */
+    private function bootRoutes(): void
+    {
+        $this->loadRoutesFrom(__DIR__ . '/../routes/web.php');
     }
 
     /**

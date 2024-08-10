@@ -2,6 +2,8 @@
 	"Already have an account?": "Haben Sie bereits ein Benutzerkonto?",
 	"Confirm": "Bestätigen",
 	"Connection": "Anmeldung",
+	"Current device": "Aktuelles Gerät",
+	"Device": "Gerät",
 	"Forgot your password?": "Passwort vergessen?",
 	"Login successful.": "Anmeldung erfolgreich.",
 	"Logout successful.": "Abmeldung erfolgreich.",
@@ -14,6 +16,9 @@
 	"Send": "Senden",
 	"Send again": "Erneut senden",
 	"Sign in": "Anmelden",
+	"Sign out": "Abmelden",
+	"Sign out from all sessions": "Von allen Sitzungen abmelden",
+	"Sign out from other sessions": "Von anderen Sitzungen abmelden",
 	"Sign up": "Registrieren",
 	"Two-factor authentication": "Zwei-Faktor-Authentifizierung"
 }

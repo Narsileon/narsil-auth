@@ -2,6 +2,8 @@
 	"Already have an account?": "Avez-vous déjà un compte ?",
 	"Confirm": "Confirmer",
 	"Connection": "Connexion",
+	"Current device": "Appareil actuel",
+	"Device": "Appareil",
 	"Forgot your password?": "Mot de passe oublié ?",
 	"Login successful.": "Connexion réussie",
 	"Logout successful.": "Déconnexion réussie.",
@@ -14,6 +16,9 @@
 	"Send": "Envoyer",
 	"Send again": "Envoyer de nouveau",
 	"Sign in": "Se connecter",
+	"Sign out": "Se déconnecter",
+	"Sign out from all sessions": "Se déconnecter de toutes les sessions",
+	"Sign out from other sessions": "Se déconnecter des autres sessions",
 	"Sign up": "S'inscrire",
 	"Two-factor authentication": "Authentification à deux facteurs"
 }

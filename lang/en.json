@@ -2,6 +2,8 @@
 	"Already have an account?": "Already have an account?",
 	"Confirm": "Confirm",
 	"Connection": "Connection",
+	"Current device": "Current device",
+	"Device": "Device",
 	"Forgot your password?": "Forgot your password?",
 	"Login successful.": "Login successful.",
 	"Logout successful.": "Logout successful.",
@@ -14,6 +16,9 @@
 	"Send": "Send",
 	"Send again": "Send again",
 	"Sign in": "Sign in",
+	"Sign out": "Sign out",
+	"Sign out from all sessions": "Sign out from all sessions",
+	"Sign out from other sessions": "Sign out from other sessions",
 	"Sign up": "Sign up",
 	"Two-factor authentication": "Two-factor authentication"
 }

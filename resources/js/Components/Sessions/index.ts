@@ -1,3 +1,3 @@
-import SessionController from "./SessionController";
+import SessionTable from "./SessionTable";
 
-export { SessionController };
+export { SessionTable };
