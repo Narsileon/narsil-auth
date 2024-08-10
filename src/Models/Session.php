@@ -103,7 +103,7 @@ class Session extends Model
      */
     final protected function device(): Attribute
     {
-        return new Attribute(
+        return Attribute::make(
             get: function ()
             {
                 DeviceService::getDevice($this->{Session::USER_AGENT});
@@ -116,7 +116,7 @@ class Session extends Model
      */
     final protected function isCurrentDevice(): Attribute
     {
-        return new Attribute(
+        return Attribute::make(
             get: function ()
             {
                 $this->{Session::ID} === request()->session()->getId();
