@@ -3,8 +3,8 @@
 #region USE
 
 use Illuminate\Support\Facades\Route;
-use Narsil\Auth\Http\Controllers\Sessions\SessionController;
 use Narsil\Auth\Http\Controllers\Sessions\SessionDeleteAllController;
+use Narsil\Auth\Http\Controllers\Sessions\SessionDeleteController;
 use Narsil\Auth\Http\Controllers\Sessions\SessionDeleteOtherController;
 
 #endregion
@@ -13,7 +13,7 @@ Route::middleware([
     'web'
 ])->group(function ()
 {
-    Route::delete('sessions/{session}/destroy', [SessionController::class, "destroy"])
+    Route::delete('sessions/{session}/destroy', [SessionDeleteController::class, "destroy"])
         ->name('sessions.destroy');
     Route::get('sessions/destroy-all', SessionDeleteAllController::class)
         ->name('sessions.destroy-all');

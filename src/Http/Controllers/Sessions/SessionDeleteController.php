@@ -15,7 +15,7 @@ use Narsil\Auth\Models\Session;
  *
  * @author Jonathan Rigaux
  */
-class SessionController
+class SessionDeleteController
 {
     #region PUBLIC METHODS
 
