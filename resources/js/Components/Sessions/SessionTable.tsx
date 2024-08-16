@@ -1,8 +1,18 @@
+import { cn } from "@narsil-ui/Components";
 import { Link } from "@inertiajs/react";
 import { Monitor, Smartphone, Tablet } from "lucide-react";
 import { useTranslationsStore } from "@narsil-ui/Stores/translationStore";
+import Button from "@narsil-ui/Components/Button/Button";
+import Table from "@narsil-ui/Components/Table/Table";
+import TableBody from "@narsil-ui/Components/Table/TableBody";
+import TableCell from "@narsil-ui/Components/Table/TableCell";
+import TableHead from "@narsil-ui/Components/Table/TableHead";
+import TableHeader from "@narsil-ui/Components/Table/TableHeader";
+import TableRow from "@narsil-ui/Components/Table/TableRow";
 
-import { Button, cn, Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@narsil-ui/Components";
+export interface SessionTableProps {
+	sessions: SessionModel[];
+}
 
 const SessionTable = ({ sessions }: SessionTableProps) => {
 	const { trans } = useTranslationsStore();

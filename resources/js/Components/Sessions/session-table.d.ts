@@ -1,3 +1,0 @@
-interface SessionTableProps {
-	sessions: SessionModel[];
-}

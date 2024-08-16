@@ -1,4 +1,11 @@
-import { Form, FormProvider, FormRenderer, useForm } from "@narsil-forms/Components";
+import Form from "@narsil-forms/Components/Form/Form";
+import FormProvider from "@narsil-forms/Components/Form/FormProvider";
+import FormRenderer from "@narsil-forms/Components/Form/FormRenderer";
+import useForm from "@narsil-forms/Components/Form/useForm";
+
+export interface ChangePasswordFormProps {
+	form: FormModel;
+}
 
 const ChangePasswordForm = ({ form }: ChangePasswordFormProps) => {
 	const reactForm = useForm({

@@ -1,6 +1,12 @@
-import { Button, Section, SectionContent, SectionFooter, SectionHeader, SectionTitle } from "@narsil-ui/Components";
 import { Link } from "@inertiajs/react";
 import { useTranslationsStore } from "@narsil-ui/Stores/translationStore";
+import Button from "@narsil-ui/Components/Button/Button";
+import Section from "@narsil-ui/Components/Section/Section";
+import SectionContent from "@narsil-ui/Components/Section/SectionContent";
+import SectionFooter from "@narsil-ui/Components/Section/SectionFooter";
+import SectionFullscreenToggle from "@narsil-ui/Components/Section/SectionFullscreenToggle";
+import SectionHeader from "@narsil-ui/Components/Section/SectionHeader";
+import SectionTitle from "@narsil-ui/Components/Section/SectionTitle";
 
 interface Props {
 	status: string;
@@ -15,6 +21,7 @@ const Index = ({ status }: Props) => {
 		<Section>
 			<SectionHeader>
 				<SectionTitle>{title}</SectionTitle>
+				<SectionFullscreenToggle />
 			</SectionHeader>
 			<SectionContent>
 				<div>
@@ -26,7 +33,6 @@ const Index = ({ status }: Props) => {
 
 				{status ? <span className='text-positive font-medium'>{status}</span> : null}
 			</SectionContent>
-
 			<SectionFooter>
 				<Button asChild={true}>
 					<Link
