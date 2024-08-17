@@ -27,7 +27,11 @@ class Menu extends AbstractMenu
             MenuNode::LABEL => 'Users',
             MenuNode::URL => '/backend/users',
             MenuNode::RELATIONSHIP_ICON => 'lucide/user',
-        ],];
+        ], [
+            MenuNode::LABEL => 'Login logs',
+            MenuNode::URL => '/backend/login-logs',
+            MenuNode::RELATIONSHIP_ICON => 'lucide/log-in',
+        ]];
     }
 
     #endregion
