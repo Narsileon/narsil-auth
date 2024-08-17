@@ -20,5 +20,7 @@
 	"Sign out from all sessions": "Sign out from all sessions",
 	"Sign out from other sessions": "Sign out from other sessions",
 	"Sign up": "Sign up",
-	"Two-factor authentication": "Two-factor authentication"
+	"Two-factor authentication": "Two-factor authentication",
+	"User": "User",
+	"Users": "Users"
 }

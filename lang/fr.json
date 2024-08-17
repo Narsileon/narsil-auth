@@ -20,5 +20,7 @@
 	"Sign out from all sessions": "Se déconnecter de toutes les sessions",
 	"Sign out from other sessions": "Se déconnecter des autres sessions",
 	"Sign up": "S'inscrire",
-	"Two-factor authentication": "Authentification à deux facteurs"
+	"Two-factor authentication": "Authentification à deux facteurs",
+	"User": "Utilisateur",
+	"Users": "Utilisateurs"
 }
