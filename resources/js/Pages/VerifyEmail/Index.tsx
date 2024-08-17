@@ -1,5 +1,5 @@
 import { Link } from "@inertiajs/react";
-import { useTranslationsStore } from "@narsil-ui/Stores/translationStore";
+import { useTranslationsStore } from "@narsil-localization/Stores/translationStore";
 import Button from "@narsil-ui/Components/Button/Button";
 import Section from "@narsil-ui/Components/Section/Section";
 import SectionContent from "@narsil-ui/Components/Section/SectionContent";

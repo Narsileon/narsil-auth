@@ -1,4 +1,4 @@
-import { useTranslationsStore } from "@narsil-ui/Stores/translationStore";
+import { useTranslationsStore } from "@narsil-localization/Stores/translationStore";
 import Button from "@narsil-ui/Components/Button/Button";
 import Form from "@narsil-forms/Components/Form/Form";
 import FormProvider from "@narsil-forms/Components/Form/FormProvider";
