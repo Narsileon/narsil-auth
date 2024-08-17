@@ -7,7 +7,7 @@ namespace Narsil\Auth\Constants;
  *
  * @author Jonathan Rigaux
  */
-abstract class ConfigKeys
+abstract class AuthConfig
 {
     #region CONSTANTS
 

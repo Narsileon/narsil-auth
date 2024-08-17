@@ -7,7 +7,7 @@ namespace Narsil\Auth\Http\Controllers;
 use Illuminate\Support\Facades\Config;
 use Inertia\Inertia;
 use Inertia\Response;
-use Narsil\Auth\Constants\ConfigKeys;
+use Narsil\Auth\Constants\AuthConfig;
 
 #endregion
 
@@ -20,7 +20,7 @@ class VerifyEmailController
      */
     public function __invoke(): Response
     {
-        $layout = Config::get(ConfigKeys::LAYOUT, 'session');
+        $layout = Config::get(AuthConfig::LAYOUT, 'session');
 
         return Inertia::render('narsil/auth::VerifyEmail/Index', compact(
             'layout',

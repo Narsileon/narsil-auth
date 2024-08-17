@@ -7,7 +7,7 @@ namespace Narsil\Auth\Http\Controllers;
 use Illuminate\Support\Facades\Config;
 use Inertia\Inertia;
 use Inertia\Response;
-use Narsil\Auth\Constants\ConfigKeys;
+use Narsil\Auth\Constants\AuthConfig;
 use Narsil\Auth\Http\Forms\ResetPasswordForm;
 
 #endregion
@@ -22,7 +22,7 @@ class ResetPasswordController
     public function __invoke(): Response
     {
         $form = (new ResetPasswordForm())->get();
-        $layout = Config::get(ConfigKeys::LAYOUT, 'session');
+        $layout = Config::get(AuthConfig::LAYOUT, 'session');
         $token = request()->route('token');
 
         return Inertia::render('narsil/auth::ResetPassword/Index', compact(
