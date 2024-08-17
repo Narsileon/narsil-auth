@@ -26,8 +26,8 @@ class TwoFactorForm extends AbstractForm
     public function __construct()
     {
         parent::__construct(
-            slug: "two-factor",
-            title: "Two-factor authentication"
+            slug: 'two-factor',
+            title: 'Two-factor authentication'
         );
     }
 
@@ -42,7 +42,7 @@ class TwoFactorForm extends AbstractForm
     {
         return [
             (new FormString(User::CODE))
-                ->type("code")
+                ->type('code')
                 ->required(),
         ];
     }

@@ -43,8 +43,8 @@ class User extends Authenticatable implements
         $this->table = self::TABLE;
 
         $this->casts = [
-            self::ACTIVE => "boolean",
-            self::PASSWORD => "hashed",
+            self::ACTIVE => 'boolean',
+            self::PASSWORD => 'hashed',
         ];
 
         $this->guarded = [
@@ -70,81 +70,81 @@ class User extends Authenticatable implements
     /**
      * @var string
      */
-    final public const ACTIVE = "active";
+    final public const ACTIVE = 'active';
     /**
      * @var string
      */
-    final public const BIRTH_COUNTRY = "birth_country";
+    final public const BIRTH_COUNTRY = 'birth_country';
     /**
      * @var string
      */
-    final public const BIRTHDATE = "birthdate";
+    final public const BIRTHDATE = 'birthdate';
     /**
      * @var string
      */
-    final public const BIRTHPLACE = "birthplace";
+    final public const BIRTHPLACE = 'birthplace';
     /**
      * @var string
      */
-    final public const CODE = "code";
+    final public const CODE = 'code';
     /**
      * @var string
      */
-    final public const CURRENT_PASSWORD = "current_password";
+    final public const CURRENT_PASSWORD = 'current_password';
     /**
      * @var string
      */
-    final public const EMAIL = "email";
+    final public const EMAIL = 'email';
     /**
      * @var string
      */
-    final public const EMAIL_VERIFIED_AT = "email_verified_at";
+    final public const EMAIL_VERIFIED_AT = 'email_verified_at';
     /**
      * @var string
      */
-    final public const ID = "id";
+    final public const ID = 'id';
     /**
      * @var string
      */
-    final public const PASSWORD = "password";
+    final public const PASSWORD = 'password';
     /**
      * @var string
      */
-    final public const PASSWORD_CONFIRMATION = "password_confirmation";
+    final public const PASSWORD_CONFIRMATION = 'password_confirmation';
     /**
      * @var string
      */
-    final public const REMEMBER = "remember";
+    final public const REMEMBER = 'remember';
     /**
      * @var string
      */
-    final public const REMEMBER_TOKEN = "remember_token";
+    final public const REMEMBER_TOKEN = 'remember_token';
     /**
      * @var string
      */
-    final public const TWO_FACTOR_CONFIRMED_AT = "two_factor_confirmed_at";
+    final public const TWO_FACTOR_CONFIRMED_AT = 'two_factor_confirmed_at';
     /**
      * @var string
      */
-    final public const TWO_FACTOR_RECOVERY_CODES = "two_factor_recovery_codes";
+    final public const TWO_FACTOR_RECOVERY_CODES = 'two_factor_recovery_codes';
     /**
      * @var string
      */
-    final public const TWO_FACTOR_SECRET = "two_factor_secret";
+    final public const TWO_FACTOR_SECRET = 'two_factor_secret';
     /**
      * @var string
      */
-    final public const USERNAME = "username";
+    final public const USERNAME = 'username';
 
     /**
      * @var string
      */
-    final public const RELATIONSHIP_SESSIONS = "sessions";
+    final public const RELATIONSHIP_SESSIONS = 'sessions';
 
     /**
      * @var string
      */
-    final public const TABLE = "users";
+    final public const TABLE = 'users';
 
     #endregion
 

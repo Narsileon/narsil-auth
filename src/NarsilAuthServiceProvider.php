@@ -199,12 +199,12 @@ final class NarsilAuthServiceProvider extends ServiceProvider
                 if (Session::get('url.intended'))
                 {
                     return redirect()->intended()
-                        ->with('success', LocalizationService::trans("Login successful."));
+                        ->with('success', LocalizationService::trans('Login successful.'));
                 }
                 else
                 {
                     return redirect('/')
-                        ->with('success', LocalizationService::trans("Login successful."));
+                        ->with('success', LocalizationService::trans('Login successful.'));
                 }
             }
         });
@@ -220,7 +220,7 @@ final class NarsilAuthServiceProvider extends ServiceProvider
             public function toResponse($request)
             {
                 return redirect('/')
-                    ->with('success', LocalizationService::trans("Logout successful."));
+                    ->with('success', LocalizationService::trans('Logout successful.'));
             }
         });
     }

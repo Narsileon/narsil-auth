@@ -26,8 +26,8 @@ class ForgotPasswordForm extends AbstractForm
     public function __construct()
     {
         parent::__construct(
-            slug: "forgot-password",
-            title: "Password reset",
+            slug: 'forgot-password',
+            title: 'Password reset',
         );
     }
 
@@ -42,11 +42,11 @@ class ForgotPasswordForm extends AbstractForm
     {
         return [
             (new FormString(User::EMAIL))
-                ->type("email")
-                ->autoComplete("email")
-                ->description("Please enter your email and we will send you instructions for resetting your password.")
+                ->type('email')
+                ->autoComplete('email')
+                ->description('Please enter your email and we will send you instructions for resetting your password.')
                 ->minLength(3)
-                ->placeholder("placeholders.email")
+                ->placeholder('placeholders.email')
                 ->required(),
         ];
     }

@@ -14,15 +14,15 @@ interface IHasFullName
     /**
      * @var string
      */
-    final public const FIRST_NAME = "first_name";
+    final public const FIRST_NAME = 'first_name';
     /**
      * @var string
      */
-    final public const FULL_NAME = "full_name";
+    final public const FULL_NAME = 'full_name';
     /**
      * @var string
      */
-    final public const LAST_NAME = "last_name";
+    final public const LAST_NAME = 'last_name';
 
     #endregion
 }

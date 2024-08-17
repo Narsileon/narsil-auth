@@ -29,11 +29,11 @@ final class FullNameScope implements Scope
      */
     public function apply(Builder $builder, Model $model): void
     {
-        $sql = "CONCAT(";
+        $sql = 'CONCAT(';
         $sql .= IHasFullName::FIRST_NAME;
         $sql .= ",' ',";
         $sql .= IHasFullName::LAST_NAME;
-        $sql .= ") AS ";
+        $sql .= ') AS ';
         $sql .= IHasFullName::FULL_NAME;
 
         $builder

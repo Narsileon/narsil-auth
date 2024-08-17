@@ -27,8 +27,8 @@ class LoginForm extends AbstractForm
     public function __construct()
     {
         parent::__construct(
-            slug: "login",
-            title: "Connection",
+            slug: 'login',
+            title: 'Connection',
         );
     }
 
@@ -43,13 +43,13 @@ class LoginForm extends AbstractForm
     {
         return [
             (new FormString(User::EMAIL))
-                ->type("email")
-                ->autoComplete("email")
+                ->type('email')
+                ->autoComplete('email')
                 ->minLength(3)
                 ->required(),
             (new FormString(User::PASSWORD))
-                ->type("password")
-                ->autoComplete("current-password")
+                ->type('password')
+                ->autoComplete('current-password')
                 ->minLength(8)
                 ->required(),
             (new FormSwitch(User::REMEMBER)),

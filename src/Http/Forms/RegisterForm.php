@@ -26,8 +26,8 @@ class RegisterForm extends AbstractForm
     public function __construct()
     {
         parent::__construct(
-            slug: "register",
-            title: "Registration",
+            slug: 'register',
+            title: 'Registration',
         );
     }
 
@@ -42,16 +42,16 @@ class RegisterForm extends AbstractForm
     {
         return [
             (new FormString(User::EMAIL))
-                ->type("email")
+                ->type('email')
                 ->minLength(3)
                 ->required(),
             (new FormString(User::PASSWORD))
-                ->type("password")
-                ->autoComplete("new-password")
+                ->type('password')
+                ->autoComplete('new-password')
                 ->required(),
             (new FormString(User::PASSWORD_CONFIRMATION))
-                ->type("password")
-                ->autoComplete("new-password")
+                ->type('password')
+                ->autoComplete('new-password')
                 ->required(),
             (new FormString(User::LAST_NAME))
                 ->required(),

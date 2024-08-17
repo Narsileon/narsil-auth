@@ -26,8 +26,8 @@ class ConfirmPasswordForm extends AbstractForm
     public function __construct()
     {
         parent::__construct(
-            slug: "confirm-password",
-            title: "Password confirmation",
+            slug: 'confirm-password',
+            title: 'Password confirmation',
         );
     }
 
@@ -42,7 +42,7 @@ class ConfirmPasswordForm extends AbstractForm
     {
         return [
             (new FormString(User::PASSWORD))
-                ->type("password")
+                ->type('password')
                 ->minLength(8)
                 ->required(),
         ];

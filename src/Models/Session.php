@@ -36,7 +36,7 @@ class Session extends Model
         ];
 
         $this->casts = [
-            self::ID => "string",
+            self::ID => 'string',
         ];
 
         $this->guarded = [
@@ -53,46 +53,46 @@ class Session extends Model
     /**
      * @var string
      */
-    final public const ID = "id";
+    final public const ID = 'id';
     /**
      * @var string
      */
-    final public const IP_ADDRESS = "ip_address";
+    final public const IP_ADDRESS = 'ip_address';
     /**
      * @var string
      */
-    final public const LAST_ACTIVITY = "last_activity";
+    final public const LAST_ACTIVITY = 'last_activity';
     /**
      * @var string
      */
-    final public const PAYLOAD = "payload";
+    final public const PAYLOAD = 'payload';
     /**
      * @var string
      */
-    final public const USER_AGENT = "user_agent";
+    final public const USER_AGENT = 'user_agent';
     /**
      * @var string
      */
-    final public const USER_ID = "user_id";
+    final public const USER_ID = 'user_id';
 
     /**
      * @var string
      */
-    final public const ATTRIBUTE_DEVICE = "device";
+    final public const ATTRIBUTE_DEVICE = 'device';
     /**
      * @var string
      */
-    final public const ATTRIBUTE_IS_CURRENT_DEVICE = "is_current_device";
+    final public const ATTRIBUTE_IS_CURRENT_DEVICE = 'is_current_device';
 
     /**
      * @var string
      */
-    final public const RELATIONSHIP_USER = "user";
+    final public const RELATIONSHIP_USER = 'user';
 
     /**
      * @var string
      */
-    final public const TABLE = "sessions";
+    final public const TABLE = 'sessions';
 
     #endregion
 
