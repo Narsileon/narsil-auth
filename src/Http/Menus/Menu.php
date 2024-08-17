@@ -27,12 +27,12 @@ class Menu extends AbstractMenu
         return [[
             MenuNode::LABEL => 'Users',
             MenuNode::URL => '/backend/users',
-            MenuNode::VISIBILITY => VisibilityEnum::AUTH,
+            MenuNode::VISIBILITY => VisibilityEnum::AUTH->value,
             MenuNode::RELATIONSHIP_ICON => 'lucide/user',
         ], [
             MenuNode::LABEL => 'Login logs',
             MenuNode::URL => '/backend/login-logs',
-            MenuNode::VISIBILITY => VisibilityEnum::AUTH,
+            MenuNode::VISIBILITY => VisibilityEnum::AUTH->value,
             MenuNode::RELATIONSHIP_ICON => 'lucide/log-in',
         ]];
     }
