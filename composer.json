@@ -34,6 +34,10 @@
 		},
 		{
 			"type": "vcs",
+			"url": "git@github.com:Narsileon/narsil-settings.git"
+		},
+		{
+			"type": "vcs",
 			"url": "git@github.com:Narsileon/narsil-storage.git"
 		},
 		{
@@ -55,6 +59,7 @@
 		"narsil/localization": "dev-main",
 		"narsil/menus": "dev-main",
 		"narsil/policies": "dev-main",
+		"narsil/settings": "dev-main",
 		"narsil/ui": "dev-main"
 	},
 	"require-dev": {

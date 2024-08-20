@@ -8,7 +8,9 @@ use Illuminate\Support\Facades\Config;
 use Inertia\Inertia;
 use Inertia\Response;
 use Narsil\Auth\Constants\AuthConfig;
+use Narsil\Auth\Constants\AuthSettings;
 use Narsil\Auth\Http\Forms\RegisterForm;
+use Narsil\Settings\Models\Setting;
 
 #endregion
 
@@ -21,6 +23,11 @@ class RegisterController
      */
     public function __invoke(): Response
     {
+        if (!Setting::get(AuthSettings::REGISTERABLE, true))
+        {
+            return redirect('login');
+        }
+
         $form = (new RegisterForm())->get();
         $layout = Config::get(AuthConfig::LAYOUT, 'session');
 
