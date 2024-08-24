@@ -153,6 +153,7 @@ final class NarsilAuthServiceProvider extends ServiceProvider
     private function bootTranslations(): void
     {
         $this->loadJsonTranslationsFrom(__DIR__ . '/../lang', 'auth');
+        $this->loadTranslationsFrom(__DIR__ . '/../lang', 'auth');
     }
 
     /**
