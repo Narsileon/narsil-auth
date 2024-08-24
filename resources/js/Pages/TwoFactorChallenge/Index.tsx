@@ -1,3 +1,4 @@
+import { FormModel } from "@narsil-forms/Types";
 import { useTranslationsStore } from "@narsil-localization/Stores/translationStore";
 import Button from "@narsil-ui/Components/Button/Button";
 import Form from "@narsil-forms/Components/Form/Form";

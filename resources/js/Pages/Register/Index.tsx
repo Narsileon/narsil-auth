@@ -1,3 +1,4 @@
+import { FormModel } from "@narsil-forms/Types";
 import { Link } from "@inertiajs/react";
 import { useTranslationsStore } from "@narsil-localization/Stores/translationStore";
 import Button from "@narsil-ui/Components/Button/Button";
@@ -38,9 +39,9 @@ const Index = ({ form }: Props) => {
 							<div className='flex flex-wrap items-center gap-x-1'>
 								<span>{trans("Already have an account?")}</span>
 								<Button
-									size='link'
+									className='p-0'
 									type='button'
-									variant='inline-link'
+									variant='link'
 									asChild={true}
 								>
 									<Link href={route("login")}>{trans("Sign in")}</Link>

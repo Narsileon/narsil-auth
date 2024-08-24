@@ -1,3 +1,4 @@
+import { FormModel } from "@narsil-forms/Types";
 import { useTranslationsStore } from "@narsil-localization/Stores/translationStore";
 import BackButton from "@narsil-ui/Components/Button/BackButton";
 import Button from "@narsil-ui/Components/Button/Button";
@@ -36,7 +37,7 @@ const Index = ({ form, status }: Props) => {
 						</SectionHeader>
 						<SectionContent>
 							<FormRenderer nodes={form.nodes} />
-							{status ? <span className='text-positive font-medium'>{status}</span> : null}
+							{status ? <span className='text-constructive font-medium'>{status}</span> : null}
 						</SectionContent>
 						<SectionFooter>
 							<Button type='submit'>{trans("Send")}</Button>

@@ -1,3 +1,4 @@
+import { FormModel } from "@narsil-forms/Types";
 import { Link } from "@inertiajs/react";
 import { useTranslationsStore } from "@narsil-localization/Stores/translationStore";
 import Button from "@narsil-ui/Components/Button/Button";
@@ -42,10 +43,10 @@ const Index = ({ form, registerable = false, status }: Props) => {
 									<span>{trans("No account?")}</span>
 
 									<Button
-										size='link'
-										type='button'
-										variant='inline-link'
 										asChild={true}
+										size='default'
+										type='button'
+										variant='link'
 									>
 										<Link href={route("register")}>{trans("Sign up")}</Link>
 									</Button>
@@ -54,15 +55,15 @@ const Index = ({ form, registerable = false, status }: Props) => {
 							<div className='flex flex-wrap items-center gap-x-1'>
 								<span>{trans("Forgot your password?")}</span>
 								<Button
-									size='link'
-									type='button'
-									variant='inline-link'
 									asChild={true}
+									size='default'
+									type='button'
+									variant='link'
 								>
 									<Link href={route("password.request")}>{trans("Reset Password")}</Link>
 								</Button>
 							</div>
-							{status ? <span className='text-positive font-medium'>{status}</span> : null}
+							{status ? <span className='text-constructive font-medium'>{status}</span> : null}
 						</SectionContent>
 						<SectionFooter>
 							<Button type='submit'>{trans("Sign in")}</Button>

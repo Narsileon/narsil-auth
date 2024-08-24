@@ -33,7 +33,7 @@ const Index = ({ status }: Props) => {
 
 					<div>{trans("If you have not received the email, please click on the button below.")}</div>
 
-					{status ? <span className='text-positive font-medium'>{status}</span> : null}
+					{status ? <span className='text-constructive font-medium'>{status}</span> : null}
 				</SectionContent>
 				<SectionFooter>
 					<Button asChild={true}>
