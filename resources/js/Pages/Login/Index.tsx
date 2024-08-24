@@ -60,7 +60,7 @@ const Index = ({ form, registerable, status }: Props) => {
 									type='button'
 									variant='link'
 								>
-									<Link href={route("password.request")}>{trans("Reset Password")}</Link>
+									<Link href={route("password.request")}>{trans("Reset password")}</Link>
 								</Button>
 							</div>
 							{status ? <span className='text-constructive font-medium'>{status}</span> : null}
