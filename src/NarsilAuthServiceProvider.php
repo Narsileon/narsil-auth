@@ -29,7 +29,6 @@ use Narsil\Auth\Models\User;
 use Narsil\Auth\Policies\LoginLogPolicy;
 use Narsil\Auth\Services\DeviceService;
 use Narsil\Framework\Policies\UserPolicy;
-use Narsil\Localization\Services\LocalizationService;
 
 #endregion
 
@@ -200,12 +199,12 @@ final class NarsilAuthServiceProvider extends ServiceProvider
                 if (Session::get('url.intended'))
                 {
                     return redirect()->intended()
-                        ->with('success', LocalizationService::trans('Login successful.'));
+                        ->with('success', 'Login successful.');
                 }
                 else
                 {
                     return redirect('/')
-                        ->with('success', LocalizationService::trans('Login successful.'));
+                        ->with('success', 'Login successful.');
                 }
             }
         });
@@ -221,7 +220,7 @@ final class NarsilAuthServiceProvider extends ServiceProvider
             public function toResponse($request)
             {
                 return redirect('/')
-                    ->with('success', LocalizationService::trans('Logout successful.'));
+                    ->with('success', 'Logout successful.');
             }
         });
     }
