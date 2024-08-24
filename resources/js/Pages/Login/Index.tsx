@@ -20,7 +20,7 @@ interface Props {
 	status: string;
 }
 
-const Index = ({ form, registerable = false, status }: Props) => {
+const Index = ({ form, registerable, status }: Props) => {
 	const { trans } = useTranslationsStore();
 
 	const reactForm = useForm({
