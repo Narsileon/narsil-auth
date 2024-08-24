@@ -1,4 +1,4 @@
-type SessionModel = {
+export type SessionModel = {
 	device: string;
 	id: string;
 	ip_address: string;
