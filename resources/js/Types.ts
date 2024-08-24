@@ -29,6 +29,7 @@ export type UserModel = {
 	email_verified_at: string;
 	email: string;
 	first_name: string;
+	full_name: string;
 	id: number;
 	last_name: string;
 	password: string;
