@@ -1,6 +1,7 @@
-import { LogIn, LogOut, Menu, UserPlus } from "lucide-react";
 import { Link } from "@inertiajs/react";
+import { LogIn, LogOut, Menu, UserPlus } from "lucide-react";
 import { useTranslationsStore } from "@narsil-localization/Stores/translationStore";
+import * as React from "react";
 import Avatar from "@narsil-ui/Components/Avatar/Avatar";
 import AvatarFallback from "@narsil-ui/Components/Avatar/AvatarFallback";
 import AvatarImage from "@narsil-ui/Components/Avatar/AvatarImage";
@@ -12,7 +13,6 @@ import DropdownMenuItem from "@narsil-ui/Components/DropdownMenu/DropdownMenuIte
 import DropdownMenuSeparator from "@narsil-ui/Components/DropdownMenu/DropdownMenuSeparator";
 import DropdownMenuTrigger, { DropdownMenuTriggerProps } from "@narsil-ui/Components/DropdownMenu/DropdownMenuTrigger";
 import TooltipWrapper from "@narsil-ui/Components/Tooltip/TooltipWrapper";
-import * as React from "react";
 
 interface LayoutUserMenuProps extends DropdownMenuTriggerProps {
 	authenticated?: boolean;

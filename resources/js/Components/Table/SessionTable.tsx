@@ -1,6 +1,7 @@
 import { cn } from "@narsil-ui/Components";
 import { Link } from "@inertiajs/react";
 import { Monitor, Smartphone, Tablet } from "lucide-react";
+import { SessionModel } from "@narsil-auth/Types";
 import { useTranslationsStore } from "@narsil-localization/Stores/translationStore";
 import Button from "@narsil-ui/Components/Button/Button";
 import Table from "@narsil-ui/Components/Table/Table";
