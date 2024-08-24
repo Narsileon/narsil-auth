@@ -48,6 +48,9 @@ return new class extends Migration
             $table
                 ->id(User::ID);
             $table
+                ->boolean(User::ACTIVE)
+                ->default(true);
+            $table
                 ->string(User::USERNAME)
                 ->unique();
             $table
