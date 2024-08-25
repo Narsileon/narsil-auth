@@ -7,19 +7,20 @@ import DropdownMenuGroup from "@narsil-ui/Components/DropdownMenu/DropdownMenuGr
 import DropdownMenuItem from "@narsil-ui/Components/DropdownMenu/DropdownMenuItem";
 import DropdownMenuSeparator from "@narsil-ui/Components/DropdownMenu/DropdownMenuSeparator";
 
-interface UserMenuDropdownContentProps extends DropdownMenuContentProps {
+interface UserMenuDropdownContentProps extends Partial<DropdownMenuContentProps> {
 	authenticated?: boolean;
 	registerable?: boolean;
 }
 
 const UserMenuDropdownContent = React.forwardRef<HTMLDivElement, UserMenuDropdownContentProps>(
-	({ authenticated = false, children, registerable = false }, ref) => {
+	({ authenticated = false, children, registerable = false, ...props }, ref) => {
 		const { trans } = useTranslationsStore();
 
 		return (
 			<DropdownMenuContent
 				ref={ref}
 				collisionPadding={8}
+				{...props}
 			>
 				{children}
 
