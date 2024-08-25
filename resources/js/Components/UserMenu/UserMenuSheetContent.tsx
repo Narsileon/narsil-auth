@@ -1,8 +1,8 @@
+import { cn } from "@narsil-ui/Components";
 import { Link } from "@inertiajs/react";
 import { LogIn, LogOut, UserPlus } from "lucide-react";
 import { useTranslationsStore } from "@narsil-localization/Stores/translationStore";
 import * as React from "react";
-import DropdownMenuItem from "@narsil-ui/Components/DropdownMenu/DropdownMenuItem";
 import NavigationMenu from "@narsil-ui/Components/NavigationMenu/NavigationMenu";
 import NavigationMenuItem from "@narsil-ui/Components/NavigationMenu/NavigationMenuItem";
 import NavigationMenuList from "@narsil-ui/Components/NavigationMenu/NavigationMenuList";
@@ -15,15 +15,18 @@ interface UserMenuSheetContentProps extends Partial<SheetContentProps> {
 }
 
 const UserMenuSheetContent = React.forwardRef<HTMLDivElement, UserMenuSheetContentProps>(
-	({ authenticated = false, children, registerable = false, ...props }, ref) => {
+	({ authenticated = false, children, className, registerable = false, ...props }, ref) => {
 		const { trans } = useTranslationsStore();
 
 		return (
 			<SheetContent
 				ref={ref}
+				className={cn("absolute inset-0 w-full", className)}
+				side='left'
+				overlay={false}
 				{...props}
 			>
-				<NavigationMenu>
+				<NavigationMenu orientation='vertical'>
 					<NavigationMenuList>
 						{children}
 
