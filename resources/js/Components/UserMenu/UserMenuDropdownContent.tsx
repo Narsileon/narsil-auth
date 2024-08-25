@@ -46,7 +46,10 @@ const UserMenuDropdownContent = React.forwardRef<HTMLDivElement, UserMenuDropdow
 						{children ? <DropdownMenuSeparator /> : null}
 
 						<DropdownMenuGroup>
-							<DropdownMenuItem asChild={true}>
+							<DropdownMenuItem
+								active={route().current() === route("login")}
+								asChild={true}
+							>
 								<Link href={route("login")}>
 									<LogIn className='h-5 w-5' />
 									{trans("Sign in")}
@@ -54,7 +57,10 @@ const UserMenuDropdownContent = React.forwardRef<HTMLDivElement, UserMenuDropdow
 							</DropdownMenuItem>
 
 							{registerable ? (
-								<DropdownMenuItem asChild={true}>
+								<DropdownMenuItem
+									active={route().current() === route("register")}
+									asChild={true}
+								>
 									<Link href={route("register")}>
 										<UserPlus className='h-5 w-5' />
 										{trans("Register")}
