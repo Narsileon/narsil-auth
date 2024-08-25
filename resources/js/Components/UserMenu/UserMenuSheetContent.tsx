@@ -6,6 +6,7 @@ import { useTranslationsStore } from "@narsil-localization/Stores/translationSto
 import * as React from "react";
 import NavigationMenu from "@narsil-ui/Components/NavigationMenu/NavigationMenu";
 import NavigationMenuItem from "@narsil-ui/Components/NavigationMenu/NavigationMenuItem";
+import NavigationMenuLink from "@narsil-ui/Components/NavigationMenu/NavigationMenuLink";
 import NavigationMenuList from "@narsil-ui/Components/NavigationMenu/NavigationMenuList";
 import Separator from "@narsil-ui/Components/Separator/Separator";
 import SheetClose from "@narsil-ui/Components/Sheet/SheetClose";
@@ -60,10 +61,15 @@ const UserMenuSheetContent = React.forwardRef<HTMLDivElement, UserMenuSheetConte
 										className={navigationMenuTriggerStyle()}
 										asChild={true}
 									>
-										<Link href={route("login")}>
-											<LogIn className='h-5 w-5' />
-											{trans("Sign in")}
-										</Link>
+										<NavigationMenuLink
+											active={route().current() === "login"}
+											asChild={true}
+										>
+											<Link href={route("login")}>
+												<LogIn className='h-5 w-5' />
+												{trans("Sign in")}
+											</Link>
+										</NavigationMenuLink>
 									</NavigationMenuItem>
 								</SheetClose>
 
@@ -73,10 +79,15 @@ const UserMenuSheetContent = React.forwardRef<HTMLDivElement, UserMenuSheetConte
 											className={navigationMenuTriggerStyle()}
 											asChild={true}
 										>
-											<Link href={route("register")}>
-												<UserPlus className='h-5 w-5' />
-												{trans("Register")}
-											</Link>
+											<NavigationMenuLink
+												active={route().current() === "register"}
+												asChild={true}
+											>
+												<Link href={route("register")}>
+													<UserPlus className='h-5 w-5' />
+													{trans("Register")}
+												</Link>
+											</NavigationMenuLink>
 										</NavigationMenuItem>
 									</SheetClose>
 								) : null}

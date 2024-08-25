@@ -47,7 +47,7 @@ const UserMenuDropdownContent = React.forwardRef<HTMLDivElement, UserMenuDropdow
 
 						<DropdownMenuGroup>
 							<DropdownMenuItem
-								active={route().current() === route("login")}
+								active={route().current() === "login"}
 								asChild={true}
 							>
 								<Link href={route("login")}>
@@ -58,7 +58,7 @@ const UserMenuDropdownContent = React.forwardRef<HTMLDivElement, UserMenuDropdow
 
 							{registerable ? (
 								<DropdownMenuItem
-									active={route().current() === route("register")}
+									active={route().current() === "register"}
 									asChild={true}
 								>
 									<Link href={route("register")}>
