@@ -46,20 +46,20 @@ const UserMenuSheetContent = React.forwardRef<HTMLDivElement, UserMenuSheetConte
 							<>
 								{children ? <Separator /> : null}
 
-								<DropdownMenuItem asChild={true}>
+								<NavigationMenuItem asChild={true}>
 									<Link href={route("login")}>
 										<LogIn className='h-5 w-5' />
 										{trans("Sign in")}
 									</Link>
-								</DropdownMenuItem>
+								</NavigationMenuItem>
 
 								{registerable ? (
-									<DropdownMenuItem asChild={true}>
+									<NavigationMenuItem asChild={true}>
 										<Link href={route("register")}>
 											<UserPlus className='h-5 w-5' />
 											{trans("Register")}
 										</Link>
-									</DropdownMenuItem>
+									</NavigationMenuItem>
 								) : null}
 							</>
 						)}
