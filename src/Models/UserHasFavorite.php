@@ -106,15 +106,15 @@ class UserHasFavorite extends Model
 
     /**
      * @param Builder $query
-     * @param string $model
+     * @param string $type
      *
      * @return void
      */
-    final public function scopeModel(Builder $query, string $model): void
+    final public function scopeType(Builder $query, string $type): void
     {
         $query->where([
             self::USER_ID => Auth::id(),
-            self::MODEL_TYPE => $model,
+            self::MODEL_TYPE => $type,
         ]);
     }
 
