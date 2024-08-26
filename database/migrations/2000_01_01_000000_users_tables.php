@@ -6,6 +6,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 use Narsil\Auth\Models\User;
+use Narsil\Auth\Models\UserHasFavorite;
 
 #endregion
 
@@ -19,6 +20,7 @@ return new class extends Migration
     public function up(): void
     {
         $this->createUsersTable();
+        $this->createUserHasFavoriteTable();
     }
 
     /**
@@ -26,12 +28,44 @@ return new class extends Migration
      */
     public function down(): void
     {
+        Schema::dropIfExists(UserHasFavorite::TABLE);
         Schema::dropIfExists(User::TABLE);
     }
 
     #endregion
 
     #region TABLES
+
+    /**
+     * @return void
+     */
+    private function createUserHasFavoriteTable(): void
+    {
+        if (Schema::hasTable(UserHasFavorite::TABLE))
+        {
+            return;
+        }
+
+        Schema::create(UserHasFavorite::TABLE, function (Blueprint $table)
+        {
+            $table
+                ->id(UserHasFavorite::ID);
+            $table
+                ->foreignId(UserHasFavorite::USER_ID)
+                ->constrained(User::TABLE, User::ID)
+                ->cascadeOnDelete();
+            $table
+                ->morphs(UserHasFavorite::RELATIONSHIP_MODEL);
+            $table
+                ->timestamps();
+
+            $table->unique([
+                UserHasFavorite::USER_ID,
+                UserHasFavorite::MODEL_TYPE,
+                UserHasFavorite::MODEL_ID,
+            ]);
+        });
+    }
 
     /**
      * @return void

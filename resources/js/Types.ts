@@ -20,6 +20,16 @@ export type SessionModel = {
 	user_agent: string;
 };
 
+export type UserHasFavoriteType = {
+	created_at: string;
+	id: number;
+	model_id: number;
+	model_type: string;
+	updated_at: string;
+	user_id: number;
+	user: UserModel;
+};
+
 export type UserModel = {
 	active: boolean;
 	birth_country: string;
