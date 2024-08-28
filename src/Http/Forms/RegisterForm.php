@@ -43,6 +43,7 @@ class RegisterForm extends AbstractForm
         return [
             (new FormString(User::EMAIL))
                 ->type('email')
+                ->autoComplete('email')
                 ->minLength(3)
                 ->required(),
             (new FormString(User::PASSWORD))
@@ -54,10 +55,13 @@ class RegisterForm extends AbstractForm
                 ->autoComplete('new-password')
                 ->required(),
             (new FormString(User::LAST_NAME))
+                ->autoComplete('family-name')
                 ->required(),
             (new FormString(User::FIRST_NAME))
+                ->autoComplete('given-name')
                 ->required(),
             (new FormString(User::USERNAME))
+                ->autoComplete('username')
                 ->required(),
         ];
     }
