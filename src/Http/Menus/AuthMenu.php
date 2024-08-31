@@ -37,5 +37,39 @@ class AuthMenu extends AbstractMenu
         ]];
     }
 
+    /**
+     * @return array
+     */
+    public static function getMenuNodes(): array
+    {
+        return [[
+            MenuNode::LABEL => 'Password reset',
+            MenuNode::URL => '/forgot-password',
+            MenuNode::VISIBILITY => VisibilityEnum::GUEST->value,
+        ], [
+            MenuNode::LABEL => 'Sign in',
+            MenuNode::URL => '/login',
+            MenuNode::VISIBILITY => VisibilityEnum::GUEST->value,
+            MenuNode::RELATIONSHIP_ICON => 'lucide/log-in',
+        ], [
+            MenuNode::LABEL => 'Password reset',
+            MenuNode::URL => '/reset-password ',
+            MenuNode::VISIBILITY => VisibilityEnum::GUEST->value,
+        ], [
+            MenuNode::LABEL => 'Register',
+            MenuNode::URL => '/register',
+            MenuNode::VISIBILITY => VisibilityEnum::GUEST->value,
+            MenuNode::RELATIONSHIP_ICON => 'lucide/user-plus',
+        ], [
+            MenuNode::LABEL => 'Two-factor authentication',
+            MenuNode::URL => '/two-factor-challenge',
+            MenuNode::VISIBILITY => VisibilityEnum::GUEST->value,
+        ], [
+            MenuNode::LABEL => 'Password confirmation',
+            MenuNode::URL => ' /user/confirm-password',
+            MenuNode::VISIBILITY => VisibilityEnum::GUEST->value,
+        ]];
+    }
+
     #endregion
 }
