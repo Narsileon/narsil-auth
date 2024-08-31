@@ -23,7 +23,7 @@ class LoginController
      */
     public function __invoke(): Response
     {
-        $resource = (new LoginForm())->getForm();
+        $form = (new LoginForm())->getForm();
         $layout = Config::get(AuthConfig::LAYOUT, 'session');
         $registerable = Setting::get(AuthSettings::REGISTERABLE, true);
         $status = session('status');
