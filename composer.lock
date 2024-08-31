@@ -2167,12 +2167,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Narsileon/narsil-forms.git",
-                "reference": "45183c3b8ff90d529171a9d6b083c3ef2b52735f"
+                "reference": "99f1797229537f4376d1dae0ed6a80fcfb2e4e58"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Narsileon/narsil-forms/zipball/45183c3b8ff90d529171a9d6b083c3ef2b52735f",
-                "reference": "45183c3b8ff90d529171a9d6b083c3ef2b52735f",
+                "url": "https://api.github.com/repos/Narsileon/narsil-forms/zipball/99f1797229537f4376d1dae0ed6a80fcfb2e4e58",
+                "reference": "99f1797229537f4376d1dae0ed6a80fcfb2e4e58",
                 "shasum": ""
             },
             "require": {
@@ -2221,7 +2221,7 @@
                 "source": "https://github.com/Narsileon/narsil-forms/tree/main",
                 "issues": "https://github.com/Narsileon/narsil-forms/issues"
             },
-            "time": "2024-08-31T10:10:48+00:00"
+            "time": "2024-08-31T13:06:54+00:00"
         },
         {
             "name": "narsil/localization",
@@ -2292,12 +2292,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Narsileon/narsil-menus.git",
-                "reference": "6099fc750c162a9a136781631e15956c97363c07"
+                "reference": "c1f13f7a56ce5e4a95d0035c3115ce837fab736b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Narsileon/narsil-menus/zipball/6099fc750c162a9a136781631e15956c97363c07",
-                "reference": "6099fc750c162a9a136781631e15956c97363c07",
+                "url": "https://api.github.com/repos/Narsileon/narsil-menus/zipball/c1f13f7a56ce5e4a95d0035c3115ce837fab736b",
+                "reference": "c1f13f7a56ce5e4a95d0035c3115ce837fab736b",
                 "shasum": ""
             },
             "require": {
@@ -2347,7 +2347,7 @@
                 "source": "https://github.com/Narsileon/narsil-menus/tree/main",
                 "issues": "https://github.com/Narsileon/narsil-menus/issues"
             },
-            "time": "2024-08-31T10:35:07+00:00"
+            "time": "2024-08-31T10:46:11+00:00"
         },
         {
             "name": "narsil/policies",

@@ -27,6 +27,7 @@ class LoginForm extends AbstractForm
     public function __construct()
     {
         parent::__construct(
+            resource: null,
             slug: 'login',
             title: 'Connection',
         );

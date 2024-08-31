@@ -26,6 +26,7 @@ class ChangePasswordForm extends AbstractForm
     public function __construct()
     {
         parent::__construct(
+            resource: null,
             slug: 'change-password',
             title: 'Password confirmation',
         );

@@ -26,6 +26,7 @@ class ForgotPasswordForm extends AbstractForm
     public function __construct()
     {
         parent::__construct(
+            resource: null,
             slug: 'forgot-password',
             title: 'Password reset',
         );

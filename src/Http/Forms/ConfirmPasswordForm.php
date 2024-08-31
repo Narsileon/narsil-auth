@@ -26,6 +26,7 @@ class ConfirmPasswordForm extends AbstractForm
     public function __construct()
     {
         parent::__construct(
+            resource: null,
             slug: 'confirm-password',
             title: 'Password confirmation',
         );

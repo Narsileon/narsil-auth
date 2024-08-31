@@ -26,6 +26,7 @@ class TwoFactorForm extends AbstractForm
     public function __construct()
     {
         parent::__construct(
+            resource: null,
             slug: 'two-factor',
             title: 'Two-factor authentication'
         );
