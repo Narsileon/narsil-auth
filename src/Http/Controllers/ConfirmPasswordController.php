@@ -21,7 +21,7 @@ class ConfirmPasswordController
      */
     public function __invoke(): Response
     {
-        $form = (new ConfirmPasswordForm())->get();
+        $form = (new ConfirmPasswordForm())->getForm();
         $layout = Config::get(AuthConfig::LAYOUT, 'session');
 
         return Inertia::render('narsil/auth::ConfirmPassword/Index', compact(

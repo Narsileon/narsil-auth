@@ -28,7 +28,7 @@ class RegisterController
             return redirect('login');
         }
 
-        $form = (new RegisterForm())->get();
+        $form = (new RegisterForm())->getForm();
         $layout = Config::get(AuthConfig::LAYOUT, 'session');
 
         return Inertia::render('narsil/auth::Register/Index', compact(

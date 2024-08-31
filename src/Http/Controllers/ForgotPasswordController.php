@@ -21,7 +21,7 @@ class ForgotPasswordController
      */
     public function __invoke(): Response
     {
-        $form = (new ForgotPasswordForm())->get();
+        $form = (new ForgotPasswordForm())->getForm();
         $layout = Config::get(AuthConfig::LAYOUT, 'session');
         $status = session('status');
 

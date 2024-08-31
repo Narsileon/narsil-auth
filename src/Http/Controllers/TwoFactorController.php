@@ -21,7 +21,7 @@ class TwoFactorController
      */
     public function __invoke(): Response
     {
-        $form = (new TwoFactorForm())->get();
+        $form = (new TwoFactorForm())->getForm();
         $layout = Config::get(AuthConfig::LAYOUT, 'session');
 
         return Inertia::render('narsil/auth::TwoFactorChallenge/Index', compact(

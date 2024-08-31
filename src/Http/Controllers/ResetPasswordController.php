@@ -21,7 +21,7 @@ class ResetPasswordController
      */
     public function __invoke(): Response
     {
-        $form = (new ResetPasswordForm())->get();
+        $form = (new ResetPasswordForm())->getForm();
         $layout = Config::get(AuthConfig::LAYOUT, 'session');
         $token = request()->route('token');
 
