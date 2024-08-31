@@ -12,7 +12,7 @@ abstract class AuthConfig
     #region CONSTANTS
 
     /**
-     * @var string
+     * @var string Layout slug for the auth views.
      */
     final public const LAYOUT = 'narsil-auth.layout';
 
