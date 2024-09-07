@@ -41,7 +41,7 @@ const Index = ({ form }: Props) => {
 								<SectionTitle>{form.title}</SectionTitle>
 								<FullscreenToggle />
 							</SectionHeader>
-							<SectionContent>
+							<SectionContent className='text-sm'>
 								<FormRenderer nodes={form.nodes} />
 								<div className='flex flex-wrap items-center gap-x-1'>
 									<span>{trans("Already have an account?")}</span>

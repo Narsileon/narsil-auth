@@ -32,7 +32,7 @@ const Index = ({ status }: Props) => {
 						<SectionTitle>{title}</SectionTitle>
 						<FullscreenToggle />
 					</SectionHeader>
-					<SectionContent>
+					<SectionContent className='text-sm'>
 						<div>
 							<span className='mr-1'>{trans("We have sent you the verification email.")}</span>
 							<span>{trans("If you cannon find the email, please also check the spam folder.")}</span>

@@ -43,7 +43,7 @@ const Index = ({ form, registerable, status }: Props) => {
 								<SectionTitle>{form.title}</SectionTitle>
 								<FullscreenToggle />
 							</SectionHeader>
-							<SectionContent>
+							<SectionContent className='text-sm'>
 								<FormRenderer nodes={form.nodes} />
 								{registerable ? (
 									<div className='flex flex-wrap items-center gap-x-1'>

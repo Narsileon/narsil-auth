@@ -42,7 +42,7 @@ const Index = ({ form, status }: Props) => {
 								<SectionTitle>{form.title}</SectionTitle>
 								<FullscreenToggle />
 							</SectionHeader>
-							<SectionContent>
+							<SectionContent className='text-sm'>
 								<FormRenderer nodes={form.nodes} />
 								{status ? <span className='text-constructive font-medium'>{status}</span> : null}
 							</SectionContent>
