@@ -1,6 +1,7 @@
 import { FormModel } from "@narsil-forms/Types";
 import { Link } from "@inertiajs/react";
 import { useTranslationsStore } from "@narsil-localization/Stores/translationStore";
+import AppHead from "@narsil-ui/Components/App/AppHead";
 import Button from "@narsil-ui/Components/Button/Button";
 import Form from "@narsil-forms/Components/Form/Form";
 import FormProvider from "@narsil-forms/Components/Form/FormProvider";
@@ -26,35 +27,42 @@ const Index = ({ form }: Props) => {
 	});
 
 	return (
-		<FormProvider {...reactForm}>
-			<Form route={route("register")}>
-				<Fullscreen>
-					<Section>
-						<SectionHeader>
-							<SectionTitle>{form.title}</SectionTitle>
-							<FullscreenToggle />
-						</SectionHeader>
-						<SectionContent>
-							<FormRenderer nodes={form.nodes} />
-							<div className='flex flex-wrap items-center gap-x-1'>
-								<span>{trans("Already have an account?")}</span>
-								<Button
-									className='p-0'
-									type='button'
-									variant='link'
-									asChild={true}
-								>
-									<Link href={route("login")}>{trans("Sign in")}</Link>
-								</Button>
-							</div>
-						</SectionContent>
-						<SectionFooter>
-							<Button type='submit'>{trans("Sign up")}</Button>
-						</SectionFooter>
-					</Section>
-				</Fullscreen>
-			</Form>
-		</FormProvider>
+		<>
+			<AppHead
+				description={form.title}
+				keywords={form.title}
+				title={form.title}
+			/>
+			<FormProvider {...reactForm}>
+				<Form route={route("register")}>
+					<Fullscreen>
+						<Section>
+							<SectionHeader>
+								<SectionTitle>{form.title}</SectionTitle>
+								<FullscreenToggle />
+							</SectionHeader>
+							<SectionContent>
+								<FormRenderer nodes={form.nodes} />
+								<div className='flex flex-wrap items-center gap-x-1'>
+									<span>{trans("Already have an account?")}</span>
+									<Button
+										className='p-0'
+										type='button'
+										variant='link'
+										asChild={true}
+									>
+										<Link href={route("login")}>{trans("Sign in")}</Link>
+									</Button>
+								</div>
+							</SectionContent>
+							<SectionFooter>
+								<Button type='submit'>{trans("Sign up")}</Button>
+							</SectionFooter>
+						</Section>
+					</Fullscreen>
+				</Form>
+			</FormProvider>
+		</>
 	);
 };
 

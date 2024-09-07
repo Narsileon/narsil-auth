@@ -1,6 +1,7 @@
 import { FormModel } from "@narsil-forms/Types";
 import { Link } from "@inertiajs/react";
 import { useTranslationsStore } from "@narsil-localization/Stores/translationStore";
+import AppHead from "@narsil-ui/Components/App/AppHead";
 import Button from "@narsil-ui/Components/Button/Button";
 import Form from "@narsil-forms/Components/Form/Form";
 import FormProvider from "@narsil-forms/Components/Form/FormProvider";
@@ -28,50 +29,57 @@ const Index = ({ form, registerable, status }: Props) => {
 	});
 
 	return (
-		<FormProvider {...reactForm}>
-			<Form route={route("login")}>
-				<Fullscreen>
-					<Section>
-						<SectionHeader>
-							<SectionTitle>{form.title}</SectionTitle>
-							<FullscreenToggle />
-						</SectionHeader>
-						<SectionContent>
-							<FormRenderer nodes={form.nodes} />
-							{registerable ? (
-								<div className='flex flex-wrap items-center gap-x-1'>
-									<span>{trans("No account?")}</span>
+		<>
+			<AppHead
+				description={form.title}
+				keywords={form.title}
+				title={form.title}
+			/>
+			<FormProvider {...reactForm}>
+				<Form route={route("login")}>
+					<Fullscreen>
+						<Section>
+							<SectionHeader>
+								<SectionTitle>{form.title}</SectionTitle>
+								<FullscreenToggle />
+							</SectionHeader>
+							<SectionContent>
+								<FormRenderer nodes={form.nodes} />
+								{registerable ? (
+									<div className='flex flex-wrap items-center gap-x-1'>
+										<span>{trans("No account?")}</span>
 
+										<Button
+											asChild={true}
+											size='default'
+											type='button'
+											variant='link'
+										>
+											<Link href={route("register")}>{trans("Sign up")}</Link>
+										</Button>
+									</div>
+								) : null}
+								<div className='flex flex-wrap items-center gap-x-1'>
+									<span>{trans("Forgot your password?")}</span>
 									<Button
 										asChild={true}
 										size='default'
 										type='button'
 										variant='link'
 									>
-										<Link href={route("register")}>{trans("Sign up")}</Link>
+										<Link href={route("password.request")}>{trans("Reset password")}</Link>
 									</Button>
 								</div>
-							) : null}
-							<div className='flex flex-wrap items-center gap-x-1'>
-								<span>{trans("Forgot your password?")}</span>
-								<Button
-									asChild={true}
-									size='default'
-									type='button'
-									variant='link'
-								>
-									<Link href={route("password.request")}>{trans("Reset password")}</Link>
-								</Button>
-							</div>
-							{status ? <span className='text-constructive font-medium'>{status}</span> : null}
-						</SectionContent>
-						<SectionFooter>
-							<Button type='submit'>{trans("Sign in")}</Button>
-						</SectionFooter>
-					</Section>
-				</Fullscreen>
-			</Form>
-		</FormProvider>
+								{status ? <span className='text-constructive font-medium'>{status}</span> : null}
+							</SectionContent>
+							<SectionFooter>
+								<Button type='submit'>{trans("Sign in")}</Button>
+							</SectionFooter>
+						</Section>
+					</Fullscreen>
+				</Form>
+			</FormProvider>
+		</>
 	);
 };
 

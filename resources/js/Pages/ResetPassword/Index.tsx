@@ -1,5 +1,6 @@
 import { FormModel } from "@narsil-forms/Types";
 import { useTranslationsStore } from "@narsil-localization/Stores/translationStore";
+import AppHead from "@narsil-ui/Components/App/AppHead";
 import BackButton from "@narsil-ui/Components/Button/BackButton";
 import Button from "@narsil-ui/Components/Button/Button";
 import Form from "@narsil-forms/Components/Form/Form";
@@ -30,25 +31,32 @@ const Index = ({ form, token }: Props) => {
 	});
 
 	return (
-		<FormProvider {...reactForm}>
-			<Form route={route("password.update")}>
-				<Fullscreen>
-					<Section>
-						<SectionHeader>
-							<SectionTitle>{form.title}</SectionTitle>
-							<FullscreenToggle />
-						</SectionHeader>
-						<SectionContent>
-							<FormRenderer nodes={form.nodes} />
-						</SectionContent>
-						<SectionFooter>
-							<Button type='submit'>{trans("Confirm")}</Button>
-							<BackButton href={route("login")} />
-						</SectionFooter>
-					</Section>
-				</Fullscreen>
-			</Form>
-		</FormProvider>
+		<>
+			<AppHead
+				description={form.title}
+				keywords={form.title}
+				title={form.title}
+			/>
+			<FormProvider {...reactForm}>
+				<Form route={route("password.update")}>
+					<Fullscreen>
+						<Section>
+							<SectionHeader>
+								<SectionTitle>{form.title}</SectionTitle>
+								<FullscreenToggle />
+							</SectionHeader>
+							<SectionContent>
+								<FormRenderer nodes={form.nodes} />
+							</SectionContent>
+							<SectionFooter>
+								<Button type='submit'>{trans("Confirm")}</Button>
+								<BackButton href={route("login")} />
+							</SectionFooter>
+						</Section>
+					</Fullscreen>
+				</Form>
+			</FormProvider>
+		</>
 	);
 };
 
