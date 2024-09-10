@@ -100,6 +100,8 @@ return new class extends Migration
             $table
                 ->string(User::FIRST_NAME);
             $table
+                ->icon(User::AVATAR);
+            $table
                 ->datetime(User::BIRTHDATE)
                 ->nullable();
             $table

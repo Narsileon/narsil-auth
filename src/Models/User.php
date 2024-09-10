@@ -13,6 +13,7 @@ use Narsil\Auth\Models\Session;
 use Narsil\Auth\Traits\HasFullName;
 use Narsil\Policies\Interfaces\IHasRoles;
 use Narsil\Policies\Traits\HasRoles;
+use Narsil\Tables\Constants\Types;
 
 #endregion
 
@@ -43,8 +44,8 @@ class User extends Authenticatable implements
         $this->table = self::TABLE;
 
         $this->casts = [
-            self::ACTIVE => 'boolean',
-            self::PASSWORD => 'hashed',
+            self::ACTIVE => Types::BOOLEAN,
+            self::PASSWORD => Types::HASHED,
         ];
 
         $this->guarded = [
@@ -71,6 +72,10 @@ class User extends Authenticatable implements
      * @var string
      */
     final public const ACTIVE = 'active';
+    /**
+     * @var string
+     */
+    final public const AVATAR = 'avatar';
     /**
      * @var string
      */
