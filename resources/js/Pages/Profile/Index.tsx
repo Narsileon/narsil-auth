@@ -71,6 +71,8 @@ const Index = ({ changePasswordForm, sessions, twoFactorForm, user }: Props) => 
 												birthplace: user.data.birthplace,
 												birth_country: user.data.birth_country,
 											}}
+											header={false}
+											nullable={false}
 										/>
 									</CardContent>
 									<CardFooter>
