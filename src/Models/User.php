@@ -45,6 +45,7 @@ class User extends Authenticatable implements
 
         $this->casts = [
             self::ACTIVE => Types::BOOLEAN,
+            self::BIRTHDATE => Types::DATE,
             self::PASSWORD => Types::HASHED,
         ];
 

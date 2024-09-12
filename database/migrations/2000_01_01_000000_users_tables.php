@@ -102,7 +102,7 @@ return new class extends Migration
             $table
                 ->icon(User::AVATAR);
             $table
-                ->datetime(User::BIRTHDATE)
+                ->date(User::BIRTHDATE)
                 ->nullable();
             $table
                 ->string(User::BIRTHPLACE)
