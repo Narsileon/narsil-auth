@@ -31,7 +31,7 @@ class UserShowTableResource extends ShowTableResource
             User::BIRTHDATE => $this->{User::BIRTHDATE},
             User::BIRTHPLACE => $this->{User::BIRTHPLACE},
             User::FIRST_NAME => $this->{User::FIRST_NAME},
-            User::FULL_NAME => $this->{User::FIRST_NAME},
+            User::FULL_NAME => $this->{User::FULL_NAME},
             User::LAST_NAME => $this->{User::LAST_NAME},
             User::USERNAME => $this->{User::USERNAME},
         ];
