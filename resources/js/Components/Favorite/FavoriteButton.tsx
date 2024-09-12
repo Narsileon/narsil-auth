@@ -26,6 +26,7 @@ const FavoriteButton = React.forwardRef<React.ElementRef<typeof TogglePrimitive.
 			<TooltipWrapper tooltip={buttonLabel}>
 				<Button
 					ref={ref}
+					clas
 					aria-label={buttonLabel}
 					size={"icon"}
 					variant={"ghost"}
@@ -48,7 +49,14 @@ const FavoriteButton = React.forwardRef<React.ElementRef<typeof TogglePrimitive.
 						{isFavorite && isHovered ? (
 							<StarOff className='h-5 w-5' />
 						) : (
-							<Star className={cn("h-5 w-5", { "fill-yellow-500": isFavorite || isHovered })} />
+							<Star
+								className={cn(
+									"h-5 w-5 stroke-yellow-500 opacity-0 transition-opacity group-data-[hovered=true]:opacity-100",
+									{
+										"fill-yellow-500": isFavorite || isHovered,
+									}
+								)}
+							/>
 						)}
 					</Link>
 				</Button>
