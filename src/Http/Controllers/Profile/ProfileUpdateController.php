@@ -4,9 +4,7 @@ namespace Narsil\Auth\Http\Controllers\Profile;
 
 #region USE
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Validator;
-use Narsil\Framework\Http\Requests\Users\ProfileUpdateRequest;
+use Narsil\Auth\Http\Requests\ProfileUpdateRequest;
 
 #endregion
 

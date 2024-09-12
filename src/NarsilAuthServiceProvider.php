@@ -27,8 +27,8 @@ use Narsil\Auth\Http\Controllers\VerifyEmailController;
 use Narsil\Auth\Models\LoginLog;
 use Narsil\Auth\Models\User;
 use Narsil\Auth\Policies\LoginLogPolicy;
+use Narsil\Auth\Policies\UserPolicy;
 use Narsil\Auth\Services\DeviceService;
-use Narsil\Framework\Policies\UserPolicy;
 
 #endregion
 

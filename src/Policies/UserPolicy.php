@@ -1,6 +1,6 @@
 <?php
 
-namespace Narsil\Framework\Policies;
+namespace Narsil\Auth\Policies;
 
 #region USE
 
