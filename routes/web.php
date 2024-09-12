@@ -3,6 +3,7 @@
 #region USE
 
 use Illuminate\Support\Facades\Route;
+use Narsil\Auth\Http\Controllers\Profile\PasswordUpdateController;
 use Narsil\Auth\Http\Controllers\Profile\ProfileEditController;
 use Narsil\Auth\Http\Controllers\Profile\ProfileIndexController;
 use Narsil\Auth\Http\Controllers\Profile\ProfileUpdateController;
@@ -21,6 +22,8 @@ Route::middleware([
         ->name('profile');
     Route::get('profile/edit', ProfileEditController::class)
         ->name('profile.edit');
+    Route::patch('profile/password', PasswordUpdateController::class)
+        ->name('profile.password');
     Route::patch('profile/update', ProfileUpdateController::class)
         ->name('profile.update');
 

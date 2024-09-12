@@ -17,7 +17,7 @@ const ChangePasswordForm = ({ form }: ChangePasswordFormProps) => {
 		<FormProvider {...reactForm}>
 			<Form
 				method='patch'
-				route={route("user-password.update")}
+				route={route("profile.password")}
 			>
 				<FormRenderer nodes={form.nodes} />
 			</Form>
