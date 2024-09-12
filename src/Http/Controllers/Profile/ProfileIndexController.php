@@ -54,7 +54,7 @@ class ProfileIndexController
      */
     private function getSessions(): AnonymousResourceCollection
     {
-        $sessions = [];
+        $sessions = collect([]);
 
         if (config('session.driver') === 'database')
         {
