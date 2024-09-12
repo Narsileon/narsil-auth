@@ -15,7 +15,7 @@ export interface FavoriteButtonProps extends Partial<ButtonProps> {
 }
 
 const FavoriteButton = React.forwardRef<React.ElementRef<typeof TogglePrimitive.Root>, FavoriteButtonProps>(
-	({ children, isFavorite, modelId, modelType, ...props }, ref) => {
+	({ children, isFavorite, modelId, modelType, onMouseEnter, onMouseLeave, ...props }, ref) => {
 		const { trans } = useTranslationsStore();
 
 		const buttonLabel = trans(isFavorite ? "Remove from favorites" : "Add to favorites");
@@ -27,10 +27,19 @@ const FavoriteButton = React.forwardRef<React.ElementRef<typeof TogglePrimitive.
 				<Button
 					ref={ref}
 					aria-label={buttonLabel}
+					asChild={true}
 					size={"icon"}
 					variant={"ghost"}
-					onMouseEnter={() => setIsHovered(true)}
-					onMouseLeave={() => setIsHovered(false)}
+					onMouseEnter={(event) => {
+						setIsHovered(true);
+
+						onMouseEnter?.(event);
+					}}
+					onMouseLeave={(event) => {
+						setIsHovered(false);
+
+						onMouseLeave?.(event);
+					}}
 					{...props}
 				>
 					<Link
