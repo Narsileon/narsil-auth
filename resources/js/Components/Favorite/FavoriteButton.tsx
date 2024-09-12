@@ -29,11 +29,15 @@ const FavoriteButton = React.forwardRef<React.ElementRef<typeof TogglePrimitive.
 					{...props}
 				>
 					<Link
+						as='button'
 						href={route(isFavorite ? "favorites.remove" : "favorites.add")}
 						method='post'
 						data={{
 							model_id: modelId,
 							model_type: modelType,
+						}}
+						onClick={(event) => {
+							event.stopPropagation();
 						}}
 					>
 						<Star className='h-5 w-5' />
