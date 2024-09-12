@@ -26,7 +26,6 @@ const FavoriteButton = React.forwardRef<React.ElementRef<typeof TogglePrimitive.
 			<TooltipWrapper tooltip={buttonLabel}>
 				<Button
 					ref={ref}
-					clas
 					aria-label={buttonLabel}
 					size={"icon"}
 					variant={"ghost"}
