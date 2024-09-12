@@ -1,13 +1,14 @@
 <?php
 
-namespace Narsil\Auth\Http\Forms;
+namespace Narsil\Auth\Http\Resources;
 
 #region USE
 
-use Narsil\Forms\Builder\AbstractForm;
+use Narsil\Auth\Models\User;
 use Narsil\Forms\Builder\AbstractFormNode;
 use Narsil\Forms\Builder\Inputs\FormString;
-use Narsil\Auth\Models\User;
+use Narsil\Forms\Builder\Inputs\FormSwitch;
+use Narsil\Forms\Http\Resources\AbstractFormResource;
 
 #endregion
 
@@ -16,7 +17,7 @@ use Narsil\Auth\Models\User;
  *
  * @author Jonathan Rigaux
  */
-class RegisterForm extends AbstractForm
+class LoginFormResource extends AbstractFormResource
 {
     #region CONSTRUCTOR
 
@@ -27,8 +28,8 @@ class RegisterForm extends AbstractForm
     {
         parent::__construct(
             resource: null,
-            slug: 'register',
-            title: 'Registration',
+            slug: 'login',
+            title: 'Connection',
         );
     }
 
@@ -49,21 +50,10 @@ class RegisterForm extends AbstractForm
                 ->required(),
             (new FormString(User::PASSWORD))
                 ->type('password')
-                ->autoComplete('new-password')
+                ->autoComplete('current-password')
+                ->minLength(8)
                 ->required(),
-            (new FormString(User::PASSWORD_CONFIRMATION))
-                ->type('password')
-                ->autoComplete('new-password')
-                ->required(),
-            (new FormString(User::LAST_NAME))
-                ->autoComplete('family-name')
-                ->required(),
-            (new FormString(User::FIRST_NAME))
-                ->autoComplete('given-name')
-                ->required(),
-            (new FormString(User::USERNAME))
-                ->autoComplete('username')
-                ->required(),
+            (new FormSwitch(User::REMEMBER)),
         ];
     }
 

@@ -8,10 +8,15 @@ use Illuminate\Support\Facades\Config;
 use Inertia\Inertia;
 use Inertia\Response;
 use Narsil\Auth\Constants\AuthConfig;
-use Narsil\Auth\Http\Forms\ResetPasswordForm;
+use Narsil\Auth\Http\Resources\ResetPasswordFormResource;
 
 #endregion
 
+/**
+ * @version 1.0.0
+ *
+ * @author Jonathan Rigaux
+ */
 class ResetPasswordController
 {
     #region PUBLIC METHODS
@@ -21,7 +26,7 @@ class ResetPasswordController
      */
     public function __invoke(): Response
     {
-        $form = (new ResetPasswordForm())->getForm();
+        $form = (new ResetPasswordFormResource())->getForm();
         $layout = Config::get(AuthConfig::LAYOUT, 'session');
         $token = request()->route('token');
 

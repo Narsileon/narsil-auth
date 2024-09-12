@@ -9,7 +9,7 @@ use Inertia\Inertia;
 use Inertia\Response;
 use Narsil\Auth\Constants\AuthConfig;
 use Narsil\Auth\Constants\AuthSettings;
-use Narsil\Auth\Http\Forms\LoginForm;
+use Narsil\Auth\Http\Resources\LoginFormResource;
 use Narsil\Settings\Models\Setting;
 
 #endregion
@@ -23,7 +23,7 @@ class LoginController
      */
     public function __invoke(): Response
     {
-        $form = (new LoginForm())->getForm();
+        $form = (new LoginFormResource())->getForm();
         $layout = Config::get(AuthConfig::LAYOUT, 'session');
         $registerable = Setting::get(AuthSettings::REGISTERABLE, true);
         $status = session('status');

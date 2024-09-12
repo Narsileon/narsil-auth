@@ -1,13 +1,13 @@
 <?php
 
-namespace Narsil\Auth\Http\Forms;
+namespace Narsil\Auth\Http\Resources;
 
 #region USE
 
 use Narsil\Auth\Models\User;
-use Narsil\Forms\Builder\AbstractForm;
 use Narsil\Forms\Builder\AbstractFormNode;
 use Narsil\Forms\Builder\Inputs\FormString;
+use Narsil\Forms\Http\Resources\AbstractFormResource;
 
 #endregion
 
@@ -16,7 +16,7 @@ use Narsil\Forms\Builder\Inputs\FormString;
  *
  * @author Jonathan Rigaux
  */
-class ChangePasswordForm extends AbstractForm
+class ChangePasswordFormResource extends AbstractFormResource
 {
     #region CONSTRUCTOR
 

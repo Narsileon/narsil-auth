@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'attributes'    => [
+    'attributes' => [
         'code'                  => 'Code',
         'current_password'      => 'Aktuelles Passwort',
         'email'                 => 'E-Mail',

@@ -1,13 +1,13 @@
 <?php
 
-namespace Narsil\Auth\Http\Forms;
+namespace Narsil\Auth\Http\Resources;
 
 #region USE
 
-use Narsil\Forms\Builder\AbstractForm;
+use Narsil\Auth\Models\User;
 use Narsil\Forms\Builder\AbstractFormNode;
 use Narsil\Forms\Builder\Inputs\FormString;
-use Narsil\Auth\Models\User;
+use Narsil\Forms\Http\Resources\AbstractFormResource;
 
 #endregion
 
@@ -16,7 +16,7 @@ use Narsil\Auth\Models\User;
  *
  * @author Jonathan Rigaux
  */
-class ConfirmPasswordForm extends AbstractForm
+class ResetPasswordFormResource extends AbstractFormResource
 {
     #region CONSTRUCTOR
 
@@ -27,8 +27,8 @@ class ConfirmPasswordForm extends AbstractForm
     {
         parent::__construct(
             resource: null,
-            slug: 'confirm-password',
-            title: 'Password confirmation',
+            slug: 'reset-password',
+            title: 'Password reset',
         );
     }
 
@@ -42,8 +42,19 @@ class ConfirmPasswordForm extends AbstractForm
     protected function getSchema(): array
     {
         return [
+            (new FormString(User::EMAIL))
+                ->type('email')
+                ->autoComplete('email')
+                ->minLength(3)
+                ->required(),
             (new FormString(User::PASSWORD))
                 ->type('password')
+                ->autoComplete('new-password')
+                ->minLength(8)
+                ->required(),
+            (new FormString(User::PASSWORD_CONFIRMATION))
+                ->type('password')
+                ->autoComplete('new-password')
                 ->minLength(8)
                 ->required(),
         ];
