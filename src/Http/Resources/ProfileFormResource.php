@@ -48,14 +48,19 @@ class ProfileFormResource extends AbstractFormResource
             (new FormCard('default'))
                 ->children([
                     (new FormString(User::USERNAME))
+                        ->autocomplete('username')
                         ->required(),
                     (new FormString(User::LAST_NAME))
+                        ->autocomplete('family-name')
                         ->required(),
                     (new FormString(User::FIRST_NAME))
+                        ->autocomplete('given-name')
                         ->required(),
-                    (new FormDate(User::BIRTHDATE)),
+                    (new FormDate(User::BIRTHDATE))
+                        ->autocomplete('bday'),
                     (new FormString(User::BIRTHPLACE)),
-                    (new FormString(User::BIRTH_COUNTRY)),
+                    (new FormString(User::BIRTH_COUNTRY))
+                        ->autocomplete('country-name'),
                 ]),
         ];
     }
