@@ -1,4 +1,5 @@
 {
+	"Add to favorites": "Ajouter aux favoris",
 	"Already have an account?": "Avez-vous déjà un compte ?",
 	"Confirm": "Confirmer",
 	"Connection": "Connexion",
@@ -20,6 +21,7 @@
 	"Profile": "Profil",
 	"Register": "S'inscrire",
 	"Registration": "Inscription",
+	"Remove from favorites": "Supprimer des favoris",
 	"Reset password": "Réinitialiser le mot de passe",
 	"Send again": "Envoyer de nouveau",
 	"Send": "Envoyer",

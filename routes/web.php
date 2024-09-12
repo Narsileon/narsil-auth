@@ -3,6 +3,8 @@
 #region USE
 
 use Illuminate\Support\Facades\Route;
+use Narsil\Auth\Http\Controllers\Favorites\FavoriteAddController;
+use Narsil\Auth\Http\Controllers\Favorites\FavoriteRemoveController;
 use Narsil\Auth\Http\Controllers\Profile\PasswordUpdateController;
 use Narsil\Auth\Http\Controllers\Profile\ProfileEditController;
 use Narsil\Auth\Http\Controllers\Profile\ProfileIndexController;
@@ -18,6 +20,12 @@ Route::middleware([
     'auth',
 ])->group(function ()
 {
+    // Favorites
+    Route::post('favorites/add', FavoriteAddController::class)
+        ->name('favorites.add');
+    Route::post('favorites/remove', FavoriteRemoveController::class)
+        ->name('favorites.remove');
+
     // Profile
     Route::get('profile', ProfileIndexController::class)
         ->name('profile');

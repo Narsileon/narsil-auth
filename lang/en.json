@@ -1,4 +1,5 @@
 {
+	"Add to favorites": "Add to favorites",
 	"Already have an account?": "Already have an account?",
 	"Confirm": "Confirm",
 	"Connection": "Connection",
@@ -20,6 +21,7 @@
 	"Profile": "Profile",
 	"Register": "Register",
 	"Registration": "Registration",
+	"Remove from favorites": "Remove from favorites",
 	"Reset password": "Reset password",
 	"Send again": "Send again",
 	"Send": "Send",

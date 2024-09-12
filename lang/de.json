@@ -1,4 +1,5 @@
 {
+	"Add to favorites": "Zu Favoriten hinzufügen",
 	"Already have an account?": "Haben Sie bereits ein Benutzerkonto?",
 	"Confirm": "Bestätigen",
 	"Connection": "Anmeldung",
@@ -20,6 +21,7 @@
 	"Profile": "Profil",
 	"Register": "Registrieren",
 	"Registration": "Registrierung",
+	"Remove from favorites": "Aus Favoriten entfernen",
 	"Reset password": "Passwort zurücksetzen",
 	"Send again": "Erneut senden",
 	"Send": "Senden",
