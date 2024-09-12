@@ -67,9 +67,9 @@ const Index = ({ changePasswordForm, sessions, twoFactorForm, user }: Props) => 
 											data={{
 												last_name: user.data.last_name,
 												first_name: user.data.first_name,
-												birthdate: user.data.birthdate,
-												birthplace: user.data.birthplace,
-												birth_country: user.data.birth_country,
+												birthdate: user.data.birthdate ?? "",
+												birthplace: user.data.birthplace ?? "",
+												birth_country: user.data.birth_country ?? "",
 											}}
 											header={false}
 											nullable={false}
