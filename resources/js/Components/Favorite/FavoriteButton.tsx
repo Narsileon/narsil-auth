@@ -8,11 +8,13 @@ import TooltipWrapper from "@narsil-ui/Components/Tooltip/TooltipWrapper";
 import type { ButtonProps } from "@narsil-ui/Components/Button/Button";
 
 export interface FavoriteButtonProps extends Partial<ButtonProps> {
-	isFavorite?: boolean;
+	isFavorite: boolean;
+	modelId: number;
+	modelType: string;
 }
 
 const FavoriteButton = React.forwardRef<React.ElementRef<typeof TogglePrimitive.Root>, FavoriteButtonProps>(
-	({ children, isFavorite = false, ...props }, ref) => {
+	({ children, isFavorite, modelId, modelType, ...props }, ref) => {
 		const { trans } = useTranslationsStore();
 
 		const buttonLabel = trans(isFavorite ? "Remove from favorites" : "Add to favorites");
@@ -29,6 +31,10 @@ const FavoriteButton = React.forwardRef<React.ElementRef<typeof TogglePrimitive.
 					<Link
 						href={route(isFavorite ? "favorites.remove" : "favorites.add")}
 						method='post'
+						data={{
+							model_id: modelId,
+							model_type: modelType,
+						}}
 					>
 						<Star className='h-5 w-5' />
 					</Link>
