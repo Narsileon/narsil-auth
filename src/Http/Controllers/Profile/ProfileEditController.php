@@ -27,7 +27,7 @@ class ProfileEditController
     {
         $user = new ProfileFormResource(Auth::user());
 
-        return Inertia::render('narsil/framework::Profile/Edit/Index', compact(
+        return Inertia::render('narsil/auth::Profile/Edit/Index', compact(
             'user',
         ));
     }

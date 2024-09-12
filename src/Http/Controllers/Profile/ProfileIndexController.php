@@ -37,7 +37,7 @@ class ProfileIndexController
         $twoFactorForm = new TwoFactorFormResource();
         $user = new UserShowTableResource($user);
 
-        return Inertia::render('narsil/framework::Profile/Index', compact(
+        return Inertia::render('narsil/auth::Profile/Index', compact(
             'changePasswordForm',
             'sessions',
             'twoFactorForm',
