@@ -5,6 +5,7 @@ namespace Narsil\Auth\Http\Resources\User;
 #region USE
 
 use Illuminate\Http\Request;
+use Narsil\Auth\Models\User;
 use Narsil\Tables\Http\Resources\ShowTableResource;
 
 #endregion
@@ -25,7 +26,15 @@ class UserShowTableResource extends ShowTableResource
      */
     public function toArray(Request $request): array
     {
-        $attributes = $this->resource->toArray();
+        return [
+            User::BIRTH_COUNTRY => $this->{User::BIRTH_COUNTRY},
+            User::BIRTHDATE => $this->{User::BIRTHDATE},
+            User::BIRTHPLACE => $this->{User::BIRTHPLACE},
+            User::FIRST_NAME => $this->{User::FIRST_NAME},
+            User::FULL_NAME => $this->{User::FIRST_NAME},
+            User::LAST_NAME => $this->{User::LAST_NAME},
+            User::USERNAME => $this->{User::USERNAME},
+        ];
 
         return $attributes;
     }
