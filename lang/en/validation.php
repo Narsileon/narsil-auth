@@ -2,7 +2,7 @@
 
 return [
     'attributes' => [
-        'birthcountry'          => 'Birth country',
+        'birth_country'         => 'Birth country',
         'birthdate'             => 'Birthdate',
         'birthplace'            => 'Birthplace',
         'code'                  => 'Code',
