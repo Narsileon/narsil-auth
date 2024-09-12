@@ -14,7 +14,8 @@ use Narsil\Auth\Http\Controllers\Sessions\SessionDeleteOtherController;
 #endregion
 
 Route::middleware([
-    'web'
+    'web',
+    'auth',
 ])->group(function ()
 {
     // Profile
