@@ -1,5 +1,6 @@
+import { cn } from "@narsil-ui/Components";
 import { Link } from "@inertiajs/react";
-import { Star } from "lucide-react";
+import { Star, StarOff } from "lucide-react";
 import { useTranslationsStore } from "@narsil-localization/Stores/translationStore";
 import * as React from "react";
 import * as TogglePrimitive from "@radix-ui/react-toggle";
@@ -19,6 +20,8 @@ const FavoriteButton = React.forwardRef<React.ElementRef<typeof TogglePrimitive.
 
 		const buttonLabel = trans(isFavorite ? "Remove from favorites" : "Add to favorites");
 
+		const [isHovered, setIsHovered] = React.useState(false);
+
 		return (
 			<TooltipWrapper tooltip={buttonLabel}>
 				<Button
@@ -26,6 +29,8 @@ const FavoriteButton = React.forwardRef<React.ElementRef<typeof TogglePrimitive.
 					aria-label={buttonLabel}
 					size={"icon"}
 					variant={"ghost"}
+					onMouseEnter={() => setIsHovered(true)}
+					onMouseLeave={() => setIsHovered(false)}
 					{...props}
 				>
 					<Link
@@ -40,7 +45,11 @@ const FavoriteButton = React.forwardRef<React.ElementRef<typeof TogglePrimitive.
 							event.stopPropagation();
 						}}
 					>
-						<Star className='h-5 w-5' />
+						{isFavorite && isHovered ? (
+							<StarOff className='h-5 w-5' />
+						) : (
+							<Star className={cn("h-5 w-5", { "fill-yellow-500": isFavorite || isHovered })} />
+						)}
 					</Link>
 				</Button>
 			</TooltipWrapper>
