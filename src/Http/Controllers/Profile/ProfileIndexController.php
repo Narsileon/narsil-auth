@@ -32,9 +32,9 @@ class ProfileIndexController
     {
         $user = Auth::user();
 
-        $changePasswordForm = new ChangePasswordFormResource();
+        $changePasswordForm = (new ChangePasswordFormResource())->getForm();
         $sessions = $this->getSessions();
-        $twoFactorForm = new TwoFactorFormResource();
+        $twoFactorForm = (new TwoFactorFormResource())->getForm();
         $user = new UserShowTableResource($user);
 
         return Inertia::render('narsil/auth::Profile/Index', compact(

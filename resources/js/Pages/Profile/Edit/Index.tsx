@@ -25,14 +25,15 @@ const Index = ({ user }: Props) => {
 
 	const form = useForm({
 		form: user.form,
+		data: user.data,
 	});
 
 	return (
 		<>
 			<AppHead
-				description={user.title}
-				keywords={user.title}
-				title={user.title}
+				description={user.form.title}
+				keywords={user.form.title}
+				title={user.form.title}
 			/>
 			<FormProvider {...form}>
 				<Form
@@ -48,7 +49,7 @@ const Index = ({ user }: Props) => {
 										href={route("profile")}
 										isDirty={form.formState.isDirty}
 									/>
-									<SectionTitle>{user.title}</SectionTitle>
+									<SectionTitle>{user.form.title}</SectionTitle>
 								</div>
 
 								<FullscreenToggle />

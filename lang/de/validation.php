@@ -2,6 +2,9 @@
 
 return [
     'attributes' => [
+        'birthcountry'          => 'Geburtsland',
+        'birthdate'             => 'Geburtsdatum',
+        'birthplace'            => 'Geburtsort',
         'code'                  => 'Code',
         'current_password'      => 'Aktuelles Passwort',
         'email'                 => 'E-Mail',
