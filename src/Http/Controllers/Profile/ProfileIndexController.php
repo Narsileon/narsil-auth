@@ -13,6 +13,8 @@ use Narsil\Auth\Http\Resources\Sessions\SessionResource;
 use Narsil\Auth\Http\Resources\TwoFactorFormResource;
 use Narsil\Auth\Http\Resources\User\UserShowTableResource;
 use Narsil\Auth\Models\Session;
+use Narsil\Localization\Services\LocalizationService;
+use Narsil\Menus\Models\MenuNode;
 
 #endregion
 
@@ -30,6 +32,11 @@ class ProfileIndexController
      */
     public function __invoke(): Response
     {
+        $breadcrumb = [[
+            MenuNode::LABEL => LocalizationService::trans('Profile'),
+            MenuNode::URL => route('profile'),
+        ]];
+
         $user = Auth::user();
 
         $changePasswordForm = (new ChangePasswordFormResource())->getForm();
@@ -38,6 +45,7 @@ class ProfileIndexController
         $user = new UserShowTableResource($user);
 
         return Inertia::render('narsil/auth::Profile/Index', compact(
+            'breadcrumb',
             'changePasswordForm',
             'sessions',
             'twoFactorForm',
