@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
 use Inertia\Response;
 use Narsil\Auth\Http\Resources\ProfileFormResource;
+use Narsil\Localization\Services\LocalizationService;
+use Narsil\Menus\Models\MenuNode;
 
 #endregion
 
@@ -25,9 +27,18 @@ class ProfileEditController
      */
     public function __invoke(): Response
     {
+        $breadcrumb = [[
+            MenuNode::LABEL => LocalizationService::trans('Profile'),
+            MenuNode::URL => route('profile'),
+        ], [
+            MenuNode::LABEL => LocalizationService::trans('Edit'),
+            MenuNode::URL => route('profile/edit'),
+        ]];
+
         $user = new ProfileFormResource(Auth::user());
 
         return Inertia::render('narsil/auth::Profile/Edit/Index', compact(
+            'breadcrumb',
             'user',
         ));
     }
