@@ -32,7 +32,7 @@ class ProfileEditController
             MenuNode::URL => route('profile'),
         ], [
             MenuNode::LABEL => LocalizationService::trans('Edit'),
-            MenuNode::URL => route('profile/edit'),
+            MenuNode::URL => route('profile.edit'),
         ]];
 
         $user = new ProfileFormResource(Auth::user());
