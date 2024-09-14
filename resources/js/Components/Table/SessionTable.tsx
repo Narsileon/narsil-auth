@@ -26,9 +26,12 @@ const SessionTable = ({ sessions }: SessionTableProps) => {
 		>
 			<Table>
 				<TableHeader>
-					<TableHead>{trans("Device")}</TableHead>
-					<TableHead>{trans("validation.attributes.IP")}</TableHead>
-					<TableHead>{trans("validation.attributes.status")}</TableHead>
+					<TableRow>
+						<TableHead>{trans("Device")}</TableHead>
+						<TableHead>{trans("validation.attributes.IP")}</TableHead>
+						<TableHead>{trans("validation.attributes.status")}</TableHead>
+						<TableHead />
+					</TableRow>
 				</TableHeader>
 				<TableBody>
 					{sessions.map((session, index) => {
@@ -58,6 +61,7 @@ const SessionTable = ({ sessions }: SessionTableProps) => {
 										variant='link'
 									>
 										<Link
+											as='button'
 											href={route("sessions.destroy", session.id)}
 											method='delete'
 										>
