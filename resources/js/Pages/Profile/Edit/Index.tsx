@@ -43,15 +43,7 @@ const Index = ({ user }: Props) => {
 					<Fullscreen>
 						<Section>
 							<SectionHeader>
-								<div className='flex items-center gap-x-2'>
-									<BackButton
-										asIcon={true}
-										href={route("profile")}
-										isDirty={form.formState.isDirty}
-									/>
-									<SectionTitle>{user.form.title}</SectionTitle>
-								</div>
-
+								<SectionTitle>{user.form.title}</SectionTitle>
 								<FullscreenToggle />
 							</SectionHeader>
 							<SectionContent>
@@ -59,6 +51,10 @@ const Index = ({ user }: Props) => {
 							</SectionContent>
 							<SectionFooter>
 								<Button type='submit'>{trans("Save")}</Button>
+								<BackButton
+									href={route("profile")}
+									isDirty={form.formState.isDirty}
+								/>
 							</SectionFooter>
 						</Section>
 					</Fullscreen>
