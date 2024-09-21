@@ -1,12 +1,13 @@
 <?php
 
-namespace Narsil\Auth\Http\Resources\User;
+namespace Narsil\Tables\Http\Resources\User;
 
 #region USE
 
 use Illuminate\Support\Collection;
 use Narsil\Auth\Models\User;
-use Narsil\Tables\Http\Resources\ShowTableResource;
+use Narsil\Tables\Http\Resources\DataTableCollection;
+use Narsil\Tables\Structures\ModelColumn;
 
 #endregion
 
@@ -15,7 +16,7 @@ use Narsil\Tables\Http\Resources\ShowTableResource;
  *
  * @author Jonathan Rigaux
  */
-class UserShowTableResource extends ShowTableResource
+class ModelCommentDataTableCollection extends DataTableCollection
 {
     #region PROTECTED METHODS
 

@@ -2,6 +2,7 @@
 
 return [
     'attributes' => [
+        'avatar'                => 'Avatar',
         'birth_country'         => 'Geburtsland',
         'birthdate'             => 'Geburtsdatum',
         'birthplace'            => 'Geburtsort',

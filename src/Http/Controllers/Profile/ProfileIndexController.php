@@ -8,10 +8,10 @@ use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
 use Inertia\Response;
-use Narsil\Auth\Http\Resources\ChangePasswordFormResource;
+use Narsil\Auth\Http\Resources\Profile\ChangePasswordFormResource;
+use Narsil\Auth\Http\Resources\Profile\ProfileShowTableResource;
 use Narsil\Auth\Http\Resources\Sessions\SessionResource;
 use Narsil\Auth\Http\Resources\TwoFactorFormResource;
-use Narsil\Auth\Http\Resources\User\UserShowTableResource;
 use Narsil\Auth\Models\Session;
 use Narsil\Localization\Services\LocalizationService;
 use Narsil\Menus\Models\MenuNode;
@@ -42,7 +42,7 @@ class ProfileIndexController
         $changePasswordForm = (new ChangePasswordFormResource())->getForm();
         $sessions = $this->getSessions();
         $twoFactorForm = (new TwoFactorFormResource())->getForm();
-        $user = new UserShowTableResource($user);
+        $user = new ProfileShowTableResource($user);
 
         return Inertia::render('narsil/auth::Profile/Index', compact(
             'breadcrumb',

@@ -54,10 +54,8 @@ class User extends Authenticatable implements
         ];
 
         $this->hidden = [
-            self::EMAIL_VERIFIED_AT,
             self::PASSWORD,
             self::REMEMBER_TOKEN,
-            self::TWO_FACTOR_CONFIRMED_AT,
             self::TWO_FACTOR_RECOVERY_CODES,
             self::TWO_FACTOR_SECRET,
         ];
