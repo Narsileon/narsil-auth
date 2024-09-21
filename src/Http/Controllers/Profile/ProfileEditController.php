@@ -7,7 +7,7 @@ namespace Narsil\Auth\Http\Controllers\Profile;
 use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
 use Inertia\Response;
-use Narsil\Auth\Http\Resources\ProfileFormResource;
+use Narsil\Auth\Http\Resources\Profile\ProfileFormResource;
 use Narsil\Localization\Services\LocalizationService;
 use Narsil\Menus\Models\MenuNode;
 

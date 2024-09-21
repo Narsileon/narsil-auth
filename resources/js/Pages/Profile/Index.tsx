@@ -1,6 +1,8 @@
 import { Link } from "@inertiajs/react";
 import { useTranslationsStore } from "@narsil-localization/Stores/translationStore";
 import AppHead from "@narsil-ui/Components/App/AppHead";
+import Avatar from "@narsil-ui/Components/Avatar/Avatar";
+import AvatarFallback from "@narsil-ui/Components/Avatar/AvatarFallback";
 import Button from "@narsil-ui/Components/Button/Button";
 import Card from "@narsil-ui/Components/Card/Card";
 import CardContent from "@narsil-ui/Components/Card/CardContent";
@@ -51,7 +53,13 @@ const Index = ({ changePasswordForm, sessions, twoFactorForm, user }: Props) => 
 							<CardHeader>
 								<CardTitle>{trans("Profile")}</CardTitle>
 							</CardHeader>
-							<CardContent>
+							<CardContent className='flex-row gap-x-8'>
+								<Avatar className='h-48 w-48'>
+									<AvatarFallback>
+										{user.data.first_name.charAt(0)}
+										{user.data.last_name.charAt(0)}
+									</AvatarFallback>
+								</Avatar>
 								<ShowTable
 									columns={user.columns}
 									data={{

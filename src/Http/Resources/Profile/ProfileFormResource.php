@@ -9,6 +9,7 @@ use Narsil\Auth\Models\User;
 use Narsil\Forms\Builder\AbstractFormNode;
 use Narsil\Forms\Builder\Elements\FormCard;
 use Narsil\Forms\Builder\Inputs\FormDate;
+use Narsil\Forms\Builder\Inputs\FormFile;
 use Narsil\Forms\Builder\Inputs\FormString;
 use Narsil\Forms\Http\Resources\AbstractFormResource;
 
@@ -45,11 +46,17 @@ class ProfileFormResource extends AbstractFormResource
     protected function getSchema(): array
     {
         return [
-            (new FormCard('default'))
+            (new FormCard('account'))
+                ->label('Account')
                 ->children([
                     (new FormString(User::USERNAME))
                         ->autocomplete('username')
                         ->required(),
+                    (new FormFile(User::AVATAR))
+                ]),
+            (new FormCard('personal-informations'))
+                ->label('Personal informations')
+                ->children([
                     (new FormString(User::LAST_NAME))
                         ->autocomplete('family-name')
                         ->required(),
