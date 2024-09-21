@@ -51,6 +51,8 @@ class UserFormResource extends AbstractFormResource
                     (new FormString(User::USERNAME))
                         ->autocomplete('username')
                         ->required(),
+                    (new FormString(User::PASSWORD))
+                        ->autocomplete('password')
                 ]),
             (new FormCard('personal-informations'))
                 ->label('Personal informations')
