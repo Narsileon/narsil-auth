@@ -16,7 +16,7 @@ use Narsil\Tables\Structures\ModelColumn;
  *
  * @author Jonathan Rigaux
  */
-class ModelCommentDataTableCollection extends DataTableCollection
+class UserDataTableCollection extends DataTableCollection
 {
     #region PROTECTED METHODS
 
