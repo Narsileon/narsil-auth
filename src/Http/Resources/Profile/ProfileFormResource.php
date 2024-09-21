@@ -53,6 +53,7 @@ class ProfileFormResource extends AbstractFormResource
                         ->autocomplete('username')
                         ->required(),
                     (new FormFile(User::AVATAR))
+                        ->accept('image/*'),
                 ]),
             (new FormCard('personal-informations'))
                 ->label('Personal informations')

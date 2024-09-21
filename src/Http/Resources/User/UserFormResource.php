@@ -8,6 +8,7 @@ use Narsil\Auth\Models\User;
 use Narsil\Forms\Builder\AbstractFormNode;
 use Narsil\Forms\Builder\Elements\FormCard;
 use Narsil\Forms\Builder\Inputs\FormDate;
+use Narsil\Forms\Builder\Inputs\FormFile;
 use Narsil\Forms\Builder\Inputs\FormString;
 use Narsil\Forms\Http\Resources\AbstractFormResource;
 
@@ -48,11 +49,13 @@ class UserFormResource extends AbstractFormResource
                     (new FormString(User::EMAIL))
                         ->autocomplete('email')
                         ->required(),
+                    (new FormString(User::PASSWORD))
+                        ->autocomplete('password'),
                     (new FormString(User::USERNAME))
                         ->autocomplete('username')
                         ->required(),
-                    (new FormString(User::PASSWORD))
-                        ->autocomplete('password')
+                    (new FormFile(User::AVATAR))
+                        ->accept('image/*'),
                 ]),
             (new FormCard('personal-informations'))
                 ->label('Personal informations')
