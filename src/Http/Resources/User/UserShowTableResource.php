@@ -26,6 +26,7 @@ class UserShowTableResource extends ShowTableResource
     {
         $columns = parent::getColumns();
 
+        $columns->forget(User::PASSWORD);
         $columns->forget(User::REMEMBER_TOKEN);
         $columns->forget(User::TWO_FACTOR_RECOVERY_CODES);
         $columns->forget(User::TWO_FACTOR_SECRET);
