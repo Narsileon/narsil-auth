@@ -1,4 +1,5 @@
 {
+	"Account": "Account",
 	"Add to favorites": "Add to favorites",
 	"Already have an account?": "Already have an account?",
 	"Confirm": "Confirm",
@@ -17,6 +18,7 @@
 	"Password change": "Password change",
 	"Password confirmation": "Password confirmation",
 	"Password reset": "Password reset",
+	"Personal informations": "Personal informations",
 	"Please enter your email and we will send you instructions for resetting your password.": "Please enter your email and we will send you instructions for resetting your password.",
 	"Profile": "Profile",
 	"Register": "Register",

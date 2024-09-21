@@ -1,4 +1,5 @@
 {
+	"Account": "Compte",
 	"Add to favorites": "Ajouter aux favoris",
 	"Already have an account?": "Avez-vous déjà un compte ?",
 	"Confirm": "Confirmer",
@@ -17,6 +18,7 @@
 	"Password change": "Modification du mot de passe",
 	"Password confirmation": "Confirmation du mot de passe",
 	"Password reset": "Réinitialisation du mot de passe",
+	"Personal informations": "Informations personnelles",
 	"Please enter your email and we will send you instructions for resetting your password.": "Veuillez entrer votre adresse e-mail et nous vous enverrons les instructions pour réinitialiser votre mot de passe.",
 	"Profile": "Profil",
 	"Register": "S'inscrire",

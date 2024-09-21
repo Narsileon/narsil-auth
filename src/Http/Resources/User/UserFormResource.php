@@ -42,11 +42,19 @@ class UserFormResource extends AbstractFormResource
     protected function getSchema(): array
     {
         return [
-            (new FormCard())
+            (new FormCard('account'))
+                ->label('Account')
                 ->children([
+                    (new FormString(User::EMAIL))
+                        ->autocomplete('email')
+                        ->required(),
                     (new FormString(User::USERNAME))
                         ->autocomplete('username')
                         ->required(),
+                ]),
+            (new FormCard('personal-informations'))
+                ->label('Personal informations')
+                ->children([
                     (new FormString(User::LAST_NAME))
                         ->autocomplete('family-name')
                         ->required(),
@@ -59,8 +67,6 @@ class UserFormResource extends AbstractFormResource
                     (new FormString(User::BIRTH_COUNTRY))
                         ->autocomplete('country-name'),
                 ]),
-
-
         ];
     }
 
